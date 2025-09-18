@@ -1,0 +1,383 @@
+  
+  
+    body {
+      margin: 0;
+      background: #f2f2f2;
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      min-height: 100vh;
+    }
+
+    .app-container {
+      width: 100%;
+      max-width: 400px;
+      height: 100vh;
+      background: white;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f0f0f0;
+      padding: 10px 16px;
+      font-weight: bold;
+      font-size: 18px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .stats {
+      display: flex;
+      gap: 12px;
+      font-size: 16px;
+    }
+
+  .title-box {
+    background: #e5e5e5;
+    color: #2a2a2a;
+    padding: 18px 32px;
+    font-weight: 800;
+    font-size: 26px;
+    border-radius: 40px;
+    margin: 1.5rem auto 1rem auto;
+    text-align: center;
+    width: fit-content;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  }
+
+  .main-content {
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: 90px;
+  }
+
+  
+  .stats span {
+    background: #e0e0e0;
+    padding: 6px 10px;
+    border-radius: 12px;
+    font-weight: bold;
+    color: #333;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .nav-item {
+    color: #888;
+    text-align: center;
+    flex: 1;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+  }
+
+
+  .nav-item.active {
+    color: black;
+    font-weight: bold;
+  }
+
+  .nav-item img {
+    width: 40px;
+    height: 40px;
+    opacity: 0.4;
+    margin-bottom: 4px;
+  }
+
+  .nav-item.active img {
+    opacity: 1;
+  }
+
+  .lesson-flow {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 20px;
+  }
+
+  .lesson {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #9fd9ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: #444;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+    margin: auto;
+    position: relative;
+  }
+
+  .lesson:hover {
+    transform: scale(1.05);
+  }
+
+  .lesson-text {
+    font-size: 25px;
+    font-weight: 500;
+    text-align: center;
+    color: #333;
+    margin-top: 12px;
+    transition: opacity 0.3s;
+  }
+
+
+  .bottom-nav {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #f0f0f0;
+    padding: 10px;
+    width: calc(100% - 20px);
+    max-width: 300px;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 20;
+  }
+
+  .tab-screen {
+    display: none;
+  }
+
+  .tab-screen.active {
+    display: block;
+  }
+
+  .lesson.visited {
+  opacity: 0.4;
+  filter: grayscale(1);
+  }
+
+  .lesson-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .lesson-text.visited {
+    opacity: 0.4;
+  }
+
+  .flashcard-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+
+  .flashcard-card {
+    background: #f0f0f0;
+    border-radius: 20px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  }
+
+  .flashcard-card:hover {
+    transform: scale(1.03);
+  }
+
+  .flashcard-card img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+  }
+
+  .flashcard-card span {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .flashcard {
+    width: 100%;
+    height: 250px;
+    perspective: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    user-select: none;
+    outline: none; /* Prevent weird shapes on focus */
+  }
+
+  .flashcard.flip {
+    transform: rotateY(180deg);
+  }
+
+  .flashcard-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+
+  .flashcard.flip .flashcard-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flashcard-front, .flashcard-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    background: #77fad7;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  .flashcard-back {
+    transform: rotateY(180deg);
+  }
+
+  
+#flashcard-tutorial {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flashcard-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.flashcard-btn {
+  background: #f2f2f2;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 16px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.flashcard-btn:hover {
+  background: #e6e6e6;
+  transform: translateY(-1px);
+}
+
+.flashcard-btn:active {
+  transform: translateY(0);
+}
+
+#reverseState {
+  font-weight: bold;
+}
+
+.tutorial-backdrop {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(255,255,255,0.9);
+}
+
+.tutorial-content {
+  position: relative;
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  max-width: 300px;
+  z-index: 1;
+}
+
+.tutorial-content h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.tutorial-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 15px;
+}
+
+.tutorial-content li {
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.tutorial-content button {
+  display: block;
+  margin: auto;
+  background: #77fad7;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 16px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.icon-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  background: #e5e5e5;
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.icon-btn img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}

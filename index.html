@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CalcRevisio</title>
+<link href="https://fonts.googleapis.com/[insert any fonts here]" rel="stylesheet">
+
+                                  <!-- Links to files -->
+
+<link rel="stylesheet" href="styles/Gen-Style.css">
+<link rel="src" href="src/Homepage-Script.js">
+
+ 
+                              <!-- Start of Code!!!! -->
+ 
+
+    <!-- Head -->
+
+
+</head>
+<body>
+  <div class="app-container">
+    <div class="top-bar">
+      <img src="images/banglaknow.png" alt="BanglaKnow Logo" style="height: 40px;">
+      <div class="stats">
+        <span><img src="images/fire-icon.png" alt="fire" style="width: 40px; height: 40px;"> <span id="streak-count">0</span></span>
+        <span><img src="images/star-icon.png" alt="star" style="width: 40px; height: 40px;"> <span id="star-count">0</span></span>
+      </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+      <div id="learn-tab" class="tab-screen active">
+        <!-- Orientation Section -->
+        <div class="title-box">INTRO</div>
+        <div class="lesson-flow">
+          <a href="orientation.html" class="lesson" data-lesson="orientation" style="background: #FFD580;">📘</a>
+          <div class="lesson-text" >ORIENTATION</div>
+        </div>
+
+        <!-- Lesson Section -->
+        <div class="title-box">ALPHABET</div>
+        <div class="lesson-flow">
+          <a href="vowels1.html" class="lesson" data-lesson="vowels1" style="background: #8bc7ff;">অ</a>
+          <div class="lesson-text" >VOWELS I</div>
+
+          <a href="vowels2.html" class="lesson" data-lesson="vowels2" style="background: #8bc7ff;">ঈ</a>
+          <div class="lesson-text" >VOWELS II</div>
+
+          <a href="consonants1.html" class="lesson" data-lesson="consonants1" style="background: #8bf3ff;">ক</a>
+          <div class="lesson-text" >CONSONANTS I</div>
+
+          <a href="consonants2.html" class="lesson" data-lesson="consonants2" style="background: #8bf3ff;">জ</a>
+          <div class="lesson-text" >CONSONANTS II</div>
+
+          <a href="consonants3.html" class="lesson" data-lesson="consonants3" style="background: #8bf3ff;">ড়</a>
+          <div class="lesson-text" >CONSONANTS III</div>
+
+          <a href="consonants4.html" class="lesson" data-lesson="consonants4" style="background: #8bf3ff;">দ</a>
+          <div class="lesson-text" >CONSONANTS IV</div>
+
+          <a href="other-consonants1.html" class="lesson" data-lesson="other-consonants1" style="background: #8bffa8;">ঙ</a>
+          <div class="lesson-text" >MISC CONSONANTS I</div>
+
+          <a href="other-consonants2.html" class="lesson" data-lesson="other-consonants2" style="background: #8bffa8;">ফ</a>
+          <div class="lesson-text" >MISC CONSONANTS II</div>
+
+          <a href="other-consonants3.html" class="lesson" data-lesson="other-consonants3" style="background: #8bffa8;">শ</a>
+          <div class="lesson-text" >MISC CONSONANTS III</div>
+
+          <a href="extra-symbols.html" class="lesson" data-lesson="extra-symbols" style="background: #ffe08b;">ং</a>
+          <div class="lesson-text" >EXTRA SYMBOLS</div>
+
+          <a href="numbers.html" class="lesson" data-lesson="numbers" style="background: #ffac8b;">১</a>
+          <div class="lesson-text" >NUMBERS</div>
+
+
+
+        </div>
+      </div>
+
+      <div id="practice-tab" class="tab-screen">
+        <div class="title-box">FLASHCARDS</div>
+        <div id="flashcardViewer" style="display:none; padding: 1.5rem;">
+          <div class="flashcard-controls">
+            <button class="flashcard-btn" onclick="exitFlashcards()">⬅</button>
+            <button class="flashcard-btn" onclick="toggleReverse()">🔁: <span id="reverseState">Off</span></button>
+          </div>
+          <div id="flashcard" class="flashcard" tabindex="0">
+            <div class="flashcard-inner">
+              <div class="flashcard-front"></div>
+              <div class="flashcard-back"></div>
+            </div>
+          </div>
+        </div>
+        <div class="flashcard-grid" id="flashcardGrid"></div>
+      </div>
+
+    <div id="stories-tab" class="tab-screen">
+      <div class="title-box">STORIES</div>
+      </div>
+    </div>
+
+
+    <!-- Profile tab should be here, separate -->
+    <div id="profile-tab" class="tab-screen">
+      <div class="title-box">PROFILE</div>
+      <p style="padding: 20px;">Will have an ability to change some settings. idk if i'm going to do a login feature.</p>
+    </div>
+
+    <!-- Bottom Nav -->
+    <div class="bottom-nav">
+      <a class="nav-item active" data-tab="learn-tab">
+        <img src="images/learn-icon.png" alt="Learn">
+        Learn
+      </a>
+      <a class="nav-item" data-tab="practice-tab">
+        <img src="images/practice-icon.png" alt="Practice">
+        Practice
+      </a>
+      <a class="nav-item" data-tab="stories-tab">
+        <img src="images/stories-icon.png" alt="Stories">
+        Stories
+      </a>
+      <a class="nav-item" data-tab="profile-tab">
+        <img src="images/profile-icon.png" alt="Profile">
+        Profile
+      </a>
+    </div>
+  </div>
+
