@@ -1,0 +1,600 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vowels 1 - Lesson I</title>
+
+  <!-- Matching Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      min-height: 100%;
+    }
+
+
+    .app-container {
+      width: 100%;
+      max-width: 400px;
+      height: 100vh;
+      background: white;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1); /* optional: phone shadow */
+      border-radius: 12px; /* optional: rounded edges */
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f0f0f0;
+      padding: 10px 16px;
+      font-weight: bold;
+      font-size: 18px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .home-button {
+      width: 28px;
+      height: 28px;
+      margin-right: 0.75rem;
+      background-image: url('https://img.icons8.com/ios-filled/50/00695c/home.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      flex-shrink: 0;
+    }
+
+    .progress-container {
+      flex: 1;
+      height: 10px;
+      background-color: #eee;
+      border-radius: 5px;
+      margin-right: 0.75rem;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 50%; /* Adjust based on progress */
+      background-color: #ffcc00;
+    }
+
+    .lesson-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      white-space: nowrap;
+      flex-shrink: 0;
+      font-family: 'League Spartan', sans-serif;
+    }
+
+    .app-container {
+    width: 100%;
+    max-width: 400px;
+    height: 100vh;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    }
+
+    .slider {
+    display: flex;
+    flex: 1; /* Fills remaining height of .app-container */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    }
+
+    .slide {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-y: auto;
+    padding: 1rem 1rem;
+    }
+
+    .text-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 0.5rem;
+      width: 100%;
+      max-width: 340px;
+    }
+
+    .text-card p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .highlight-red {
+      color: #ec3649;
+    }
+
+    .highlight-blue {
+      color: #2a81f4;
+    }
+
+    .highlight-bold {
+      font-weight: bold;
+    }
+
+    .bangla-image {
+      display: block;
+      width: 100%;
+      max-width: 300px;
+      margin: 1rem auto 0.5rem;
+    }
+
+    .bangla-pronounce {
+      text-align: center;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .bangla-row {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    .nav-indicator {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 1.2rem;
+    }
+
+    .match-item {
+    background-color: #ffffff;
+    border: 2px solid #ccc;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem 1.5rem;
+    border-radius: 16px;
+    font-size: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    user-select: none;
+    }
+
+    .match-item.correct {
+    background-color: #a5d6a7; /* green */
+    border-color: #388e3c;
+    }
+
+    .match-item.wrong {
+    background-color: #ef9a9a; /* red */
+    border-color: #c62828;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <div class="top-bar">
+      <a href="index.html" class="home-button" aria-label="Go Home"></a>
+      <div class="progress-container">
+        <div class="progress-bar"></div>
+      </div>
+      <div class="lesson-title">Vowels - Lesson I</div>
+    </div>
+
+    <div class="slider" id="slider">
+
+
+      <!-- Page 2 --> 
+      <section class="slide">
+        <div class="text-card">
+          <p>Bangla is an <span class="highlight-bold">alphasyllabary</span>.</p>
+          <p>An alphasyllabary is a language system where <span class="highlight-blue">consonant</span>-<span class="highlight-red">vowel</span> sequences are written as <span class="highlight-bold">units</span>.</p>
+          <p>These units are <span class="highlight-bold">syllables</span></p>
+          <img class="bangla-image" src="images/amar-diagram.png" alt="amar triangle diagram" />
+          <p>Lets start with the first 6 vowels in the Bangla Alphabet!</p>
+        </div>
+      </section>
+
+      <!-- Page 3 --> 
+      <section class="slide">
+        <div class="text-card">
+          <p> Vowel Notation comes second in the form of a diacritic - symbols added to consonants</p>
+          <p>Every vowel has a <span class="highlight-bold">whole form</span> (আ) and a <span class="highlight-bold">diacritic form</span> (া). </p>
+          <img class="bangla-image" src="images/whole-vs-diacritic-form.png" alt="Two vorms of Bangla Vowels" />
+          <p>These are also known as independent and dependent forms.</p>
+        </div>
+      </section>
+
+        <!-- Page 3 -->
+      <section class="slide">
+        <div class="text-card">
+          <p>Independent <span class="highlight-red">vowels</span> can exist by themselves.</p>
+          <p>They are typically used at the <span class="highlight-bold">start of a syllable</span>.</p>
+          <img class="bangla-image" src="imag/es/am-diagram.png" alt="Bangla word amar" />
+        </div>
+      </section>
+
+              <!-- Page 4 -->
+            <section class="slide">
+        <div class="text-card">
+          <p>Dependent vowels have to be attached to a consonant.</p>
+          <p>They can come before, after, above, or below their attached consonant.</p>
+          <img class="bangla-image" src="images/bangla-vowels.png" alt="Bangla vowels" />
+        </div>
+      </section>
+  
+                                                          <!--Letter: Shoria-->
+      <!-- Page Type 4 - Letter Introduction Card -->
+      <section class="slide">
+        <div class="text-card">
+
+          <!-- Letter boxes -->
+          <div style="display: flex; justify-content: space-around; margin: 1rem 0;">
+            <div style="background-color: #ffcc00; padding: 1rem 1.5rem; border-radius: 20px; font-size: 2.5rem;">আ</div>
+            <div style="background-color: #ffcc00; padding: 1rem 1.5rem; border-radius: 20px; font-size: 2.5rem;">◌া</div>
+          </div>
+
+          <!-- Letter name + sound + audio -->
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <p style="margin: 0; font-weight: bold;">SHORIA</p>
+              <p style="margin: 0;">a (ah)</p>
+            </div>
+            <button onclick="playLetterAudio('shoria')" style="background: #4285f4; border: none; border-radius: 50%; padding: 0.5rem;">
+              🔊
+            </button>
+            <audio id="audio-shoria" src="audio/shoria.mp3"></audio>
+          </div>
+          
+          <!-- Words with আ -->
+          <p style="font-weight: bold; margin-top: 1.5rem;">Words With আ</p>
+
+          <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem;">
+            <!-- Word 1 -->
+            <div style="width: 45%; text-align: center;">
+              <img src="images/mango.png" alt="Mango" style="width: 100%; max-height: autopx;" />
+            </div>
+
+            <!-- Word 2 -->
+            <div style="width: 45%; text-align: center;">
+              <img src="images/playing.png" alt="Playing" style="width: 100%; max-height: autopx;" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Page Type 3 - Guided Tracing -->
+          <section class="slide">
+          <div class="text-card">
+              <p style="margin-bottom: 1rem;">Trace the letter <span class="highlight-red" style="font-size: 1.5rem;">আ</span> following the stroke order.</p>
+              <canvas id="tracingCanvasGuide_a" width="300" height="300" style="border:1px solid #ccc; display: block; margin: 1rem auto; background: url('images/a-stroke-guide.png') center/contain no-repeat;"></canvas>
+              <p id="feedbackGuide_a" style="color: red; font-weight: bold; text-align: center;"></p>
+              <div style="text-align: center; margin-top: 1rem;">
+              <button onclick="clearCanvas('Guide_a')" style="padding: 0.5rem 1rem; background: #00695c; color: white; border: none; border-radius: 8px;">Try Again</button>
+              </div>
+          </div>
+          </section>
+
+      <!-- Page Type 4 - Free Tracing -->
+      <section class="slide">
+      <div class="text-card">
+          <p style="margin-bottom: 1rem;">Now trace without the letter without any guide.</p>
+          <canvas id="tracingCanvasBlind_a" width="300" height="300" style="border:1px solid #ccc; display: block; margin: 1rem auto;"></canvas>
+          <p id="feedbackBlind_a" style="color: red; font-weight: bold; text-align: center;"></p>
+          <div style="text-align: center; margin-top: 1rem;">
+          <button onclick="clearCanvas('Blind_a')" style="padding: 0.5rem 1rem; background: #00695c; color: white; border: none; border-radius: 8px;">Try Again</button>
+          </div>
+      </div>
+      </section>
+
+
+    <!-- Page Type 5 - Mix and Match Game -->
+    <section class="slide">
+    <div class="text-card">
+        <p style="font-weight: bold; text-align: center;">Match the independent forms, dependent forms, and sounds</p>
+
+        <div id="match-board" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; justify-items: center; margin-top: 1.5rem;">
+        <!-- Game items will be inserted here -->
+        </div>
+
+        <p id="match-feedback" style="text-align: center; font-weight: bold; color: red; margin-top: 1rem;"></p>
+        <div class="nav-indicator">← 31 →</div>
+    </div>
+    </section>
+
+    <!-- Page Type 6 - Ending Summary Screen -->
+    <section class="slide">
+    <div class="text-card" style="text-align: center;">
+        <h2 style="margin-top: 0.5rem;">Vowels - Lesson I</h2>
+        <p style="font-weight: bold; font-size: 1.2rem;">Lesson Summary</p>
+
+        <div style="background: #ffcc00; padding: 1rem; border-radius: 16px; margin: 1.5rem 0;">
+        <p style="margin: 0; font-weight: bold;">Learned</p>
+        <p style="font-size: 1.5rem;">অ আ ই ঈ উ ঊ</p>
+        </div>
+
+        <div style="background: #ffcc00; padding: 1rem; border-radius: 16px; margin: 1.5rem 0;">
+        <p style="margin: 0; font-weight: bold;">Lingo Stars Earned</p>
+        <p style="font-size: 1.5rem;">15</p>
+        </div>
+
+        <h3 style="margin-top: 2rem; font-size: 1.5rem;">Good Job!</h3>
+        <p style="font-size: 1rem;">Press Home To Exit</p>
+
+        <div class="nav-indicator">← 32</div>
+    </div>
+    </section>
+
+
+    <script>
+    const slider = document.getElementById('slider');
+    const progressBar = document.querySelector('.progress-bar');
+    const totalSlides = slider.children.length;
+    let currentSlide = 0;
+
+    function getSlideWidth() {
+        return slider.clientWidth;
+    }
+
+    function goToSlide(index) {
+        currentSlide = Math.max(0, Math.min(index, totalSlides - 1));
+        const slideWidth = getSlideWidth();
+        slider.scrollTo({
+        left: currentSlide * slideWidth,
+        behavior: 'smooth'
+        });
+        updateProgressBar();
+    }
+
+    function updateProgressBar() {
+        const percent = ((currentSlide + 1) / totalSlides) * 100;
+        progressBar.style.width = percent + '%';
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight') {
+        goToSlide(currentSlide + 1);
+        } else if (e.key === 'ArrowLeft') {
+        goToSlide(currentSlide - 1);
+        }
+    });
+
+    slider.addEventListener('scroll', () => {
+        const slideWidth = getSlideWidth();
+        const index = Math.round(slider.scrollLeft / slideWidth);
+        if (index !== currentSlide) {
+        currentSlide = index;
+        updateProgressBar();
+        }
+    });
+
+  const canvasTypes = ['Guide', 'Blind'];
+  const letters = ['a']; // extend as needed
+
+  function getOffset(canvas, e) {
+    const rect = canvas.getBoundingClientRect();
+    return {
+      x: (e.clientX || e.touches?.[0]?.clientX) - rect.left,
+      y: (e.clientY || e.touches?.[0]?.clientY) - rect.top
+    };
+  }
+
+  function setupCanvas(id) {
+    const canvas = document.getElementById('tracingCanvas' + id);
+    const ctx = canvas.getContext('2d');
+    let drawing = false;
+
+    function startDraw(e) {
+      drawing = true;
+      const pos = getOffset(canvas, e);
+      ctx.beginPath();
+      ctx.moveTo(pos.x, pos.y);
+    }
+
+    function endDraw() {
+      drawing = false;
+      ctx.closePath();
+      validateDrawing(id);
+    }
+
+    function draw(e) {
+      if (!drawing) return;
+      const pos = getOffset(canvas, e);
+      ctx.lineWidth = 5;
+      ctx.lineCap = 'round';
+      ctx.strokeStyle = '#000';
+      ctx.lineTo(pos.x, pos.y);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(pos.x, pos.y);
+    }
+
+    canvas.addEventListener('mousedown', startDraw);
+    canvas.addEventListener('mouseup', endDraw);
+    canvas.addEventListener('mouseout', endDraw);
+    canvas.addEventListener('mousemove', draw);
+
+    canvas.addEventListener('touchstart', startDraw, { passive: false });
+    canvas.addEventListener('touchend', endDraw);
+    canvas.addEventListener('touchcancel', endDraw);
+    canvas.addEventListener('touchmove', (e) => {
+      e.preventDefault();
+      draw(e);
+    }, { passive: false });
+  }
+
+  function clearCanvas(id) {
+    const canvas = document.getElementById('tracingCanvas' + id);
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    document.getElementById('feedback' + id).textContent = '';
+  }
+
+  function validateDrawing(id) {
+    const canvas = document.getElementById('tracingCanvas' + id);
+    const ctx = canvas.getContext('2d');
+    const imageData = ctx.getImageData(100, 100, 100, 100);
+    let drawn = false;
+
+    for (let i = 0; i < imageData.data.length; i += 4) {
+      if (imageData.data[i + 3] > 20) {
+        drawn = true;
+        break;
+      }
+    }
+
+    const feedbackEl = document.getElementById('feedback' + id);
+    feedbackEl.textContent = drawn ? '' : 'Try tracing more carefully!';
+  }
+
+  // Initialize all canvases
+  canvasTypes.forEach(type => {
+    letters.forEach(letter => {
+      const id = `${type}_${letter}`;
+      setupCanvas(id);
+    });
+  });
+
+    const triplets = [
+        { group: 'a', items: ['অ', '◌', 'o'] },
+        { group: 'a', items: ['আ', '◌া', 'a'] },
+        { group: 'b', items: ['ই', '◌ি', 'i'] },
+        { group: 'c', items: ['ঈ', '◌ী', 'ii'] },
+        { group: 'c', items: ['উ', '◌ু', 'u'] },
+        { group: 'c', items: ['ঊ', '◌ূ', 'uu'] },
+
+
+];
+
+    let selected = null;
+    const matchBoard = document.getElementById('match-board');
+    let selectedGroup = [];
+
+    function shuffle(array) {
+    return array
+        .map(value => ({ value, sort: Math.random() }))
+        .sort((a, b) => a.sort - b.sort)
+        .map(({ value }) => value);
+    }
+
+    function renderTripletItems() {
+    const allItems = triplets.flatMap(triplet =>
+        triplet.items.map(label => ({
+        label,
+        group: triplet.group
+        }))
+    );
+
+    matchBoard.innerHTML = '';
+    shuffle(allItems).forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'match-item';
+        div.textContent = item.label;
+        div.dataset.group = item.group;
+        div.addEventListener('click', () => handleSelectTriple(div));
+        matchBoard.appendChild(div);
+    });
+    }
+
+    function handleSelectTriple(itemDiv) {
+    if (itemDiv.classList.contains('correct')) return;
+
+    if (selectedGroup.includes(itemDiv)) {
+        itemDiv.style.boxShadow = '';
+        selectedGroup = selectedGroup.filter(el => el !== itemDiv);
+        return;
+    }
+
+    selectedGroup.push(itemDiv);
+    itemDiv.style.boxShadow = '0 0 10px #4285f4';
+
+    if (selectedGroup.length === 3) {
+        const allSameGroup = selectedGroup.every(
+        el => el.dataset.group === selectedGroup[0].dataset.group
+        );
+
+        if (allSameGroup) {
+        selectedGroup.forEach(el => {
+            el.classList.add('correct');
+            el.style.boxShadow = '';
+        });
+        selectedGroup = [];
+        checkTripleCompletion();
+        } else {
+        selectedGroup.forEach(el => el.classList.add('wrong'));
+        feedback.textContent = 'Try again!';
+        setTimeout(() => {
+            selectedGroup.forEach(el => {
+            el.classList.remove('wrong');
+            el.style.boxShadow = '';
+            });
+            selectedGroup = [];
+            feedback.textContent = '';
+        }, 800);
+        }
+    }
+    }
+
+    function checkTripleCompletion() {
+    const remaining = [...matchBoard.querySelectorAll('.match-item')].filter(
+        item => !item.classList.contains('correct')
+    );
+    if (remaining.length === 0) {
+        feedback.textContent = 'Well done!';
+        feedback.style.color = '#388e3c';
+    }
+    }
+
+
+    const feedback = document.getElementById('match-feedback');
+
+    function shuffle(array) {
+        return array
+        .map(value => ({ value, sort: Math.random() }))
+        .sort((a, b) => a.sort - b.sort)
+        .map(({ value }) => value);
+    }
+
+
+    function handleSelect(itemDiv) {
+        if (itemDiv.classList.contains('correct')) return; // already matched
+
+    }
+
+    // Initialize on load
+    renderTripletItems();
+
+    function playLetterAudio(letterId) {
+        const audio = document.getElementById(`audio-${letterId}`);
+        if (audio) {
+        audio.currentTime = 0; // rewind in case it's already playing
+        audio.play().catch(err => {
+            console.error("Audio failed to play:", err);
+        });
+        } else {
+        console.error(`Audio element for '${letterId}' not found`);
+        }
+    }
+
+    </script>
+</body>
+</html>
