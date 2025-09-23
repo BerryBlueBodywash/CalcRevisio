@@ -50,5 +50,12 @@
     <a onclick="switchTab('practice-tab')"><img src="images/practice-icon.png" alt="Practice">PRACTICE</a>
     <a onclick="switchTab('test-tab')"><img src="images/test-icon.png" alt="Test";">TEST</a>
   </div>
+
+  <script>
+    function switchTab(tabId) {
+      document.querySelectorAll('.lesson-flow').forEach(tab => tab.classList.add('hidden'));
+      document.getElementById(tabId).classList.remove('hidden');
+    }
+  </script>
 </body>
 </html>
