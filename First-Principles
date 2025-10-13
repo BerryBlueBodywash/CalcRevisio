@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vowels 1 - Lesson I</title>
+  <title>First Principles - Lesson I</title>
 # #
   <!-- Matching Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet" />
@@ -196,7 +196,7 @@
       <div class="progress-container">
         <div class="progress-bar"></div>
       </div>
-      <div class="lesson-title">Vowels - Lesson I</div>
+      <div class="lesson-title">First Principles - Lesson I</div>
     </div>
 
     <div class="slider" id="slider">
@@ -205,11 +205,11 @@
       <!-- Page 2 --> 
       <section class="slide">
         <div class="text-card">
-          <p>Bangla is an <span class="highlight-bold">alphasyllabary</span>.</p>
-          <p>An alphasyllabary is a language system where <span class="highlight-blue">consonant</span>-<span class="highlight-red">vowel</span> sequences are written as <span class="highlight-bold">units</span>.</p>
+          <p>The gradient of curved lines can be shown as the <span class="highlight-bold">derivative</span>.</p>
+          <p>The derivative represents the <span class="highlight-blue"> instantaneuous rate of change</span>-<span class="highlight-red">vowel</span> of a point on a <span class="highlight-bold">units</span>.</p>
           <p>These units are <span class="highlight-bold">syllables</span></p>
           <img class="bangla-image" src="images/amar-diagram.png" alt="amar triangle diagram" />
-          <p>Lets start with the first 6 vowels in the Bangla Alphabet!</p>
+          <p>Lets start with the derivative of x<sup>2</sup>!</p>
         </div>
       </section>
 
@@ -218,7 +218,7 @@
         <div class="text-card">
           <p> Vowel Notation comes second in the form of a diacritic - symbols added to consonants</p>
           <p>Every vowel has a <span class="highlight-bold">whole form</span> (আ) and a <span class="highlight-bold">diacritic form</span> (া). </p>
-          <img class="bangla-image" src="images/whole-vs-diacritic-form.png" alt="Two vorms of Bangla Vowels" />
+          <img class="bangla-image" src="images/whole-vs-diacritic-form.png" alt="Two vorms of Bangla First Principles" />
           <p>These are also known as independent and dependent forms.</p>
         </div>
       </section>
@@ -226,7 +226,7 @@
         <!-- Page 3 -->
       <section class="slide">
         <div class="text-card">
-          <p>Independent <span class="highlight-red">vowels</span> can exist by themselves.</p>
+          <p>Independent <span class="highlight-red">First Principles</span> can exist by themselves.</p>
           <p>They are typically used at the <span class="highlight-bold">start of a syllable</span>.</p>
           <img class="bangla-image" src="imag/es/am-diagram.png" alt="Bangla word amar" />
         </div>
@@ -235,9 +235,9 @@
               <!-- Page 4 -->
             <section class="slide">
         <div class="text-card">
-          <p>Dependent vowels have to be attached to a consonant.</p>
+          <p>Dependent First Principles have to be attached to a consonant.</p>
           <p>They can come before, after, above, or below their attached consonant.</p>
-          <img class="bangla-image" src="images/bangla-vowels.png" alt="Bangla vowels" />
+          <img class="bangla-image" src="images/bangla-First Principles.png" alt="Bangla First Principles" />
         </div>
       </section>
   
@@ -324,7 +324,7 @@
     <!-- Page Type 6 - Ending Summary Screen -->
     <section class="slide">
     <div class="text-card" style="text-align: center;">
-        <h2 style="margin-top: 0.5rem;">Vowels - Lesson I</h2>
+        <h2 style="margin-top: 0.5rem;">First Principles - Lesson I</h2>
         <p style="font-weight: bold; font-size: 1.2rem;">Lesson Summary</p>
 
         <div style="background: #ffcc00; padding: 1rem; border-radius: 16px; margin: 1.5rem 0;">
@@ -333,7 +333,7 @@
         </div>
 
         <div style="background: #ffcc00; padding: 1rem; border-radius: 16px; margin: 1.5rem 0;">
-        <p style="margin: 0; font-weight: bold;">Lingo Stars Earned</p>
+        <p style="margin: 0; font-weight: bold;">Matho Stars Earned</p>
         <p style="font-size: 1.5rem;">15</p>
         </div>
 
