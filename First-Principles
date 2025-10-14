@@ -285,7 +285,7 @@
       <!-- Page Type 3 - Guided Tracing -->
           <section class="slide">
           <div class="text-card">
-              <p style="margin-bottom: 1rem;">Trace the letter <span class="highlight-red" style="font-size: 1.5rem;">আ</span> following the stroke order.</p>
+              <p style="margin-bottom: 1rem;">The derivative can be found using the power rule <span class="highlight-red" style="font-size: 1.5rem;">আ</span> following the stroke order.</p>
               <canvas id="tracingCanvasGuide_a" width="300" height="300" style="border:1px solid #ccc; display: block; margin: 1rem auto; background: url('images/a-stroke-guide.png') center/contain no-repeat;"></canvas>
               <p id="feedbackGuide_a" style="color: red; font-weight: bold; text-align: center;"></p>
               <div style="text-align: center; margin-top: 1rem;">
