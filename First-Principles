@@ -475,7 +475,7 @@
   });
 
     const triplets = [
-        { group: 'a', items: ['f(x)=x', '1',] },
+        { group: 'a', items: ['f(x)=x', '1'] },
         { group: 'a', items: ['f(x)=x<sup>2</sup>', 'f'(x)=2x'] },
         { group: 'b', items: ['f(x)=x<sup>3</sup>', 'f'(x)=3x<sup>2</sup>] },
         { group: 'c', items: ['f(x)=2x<sup>2</sup>]', 'f'(x)=4x'] },
@@ -527,7 +527,7 @@
     selectedGroup.push(itemDiv);
     itemDiv.style.boxShadow = '0 0 10px #4285f4';
 
-    if (selectedGroup.length === 3) {
+    if (selectedGroup.length === 2) {
         const allSameGroup = selectedGroup.every(
         el => el.dataset.group === selectedGroup[0].dataset.group
         );
