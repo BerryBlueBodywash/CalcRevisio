@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>First Principles - Lesson I</title>
-# #
   <!-- Matching Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet" />
@@ -27,6 +26,10 @@
 
     .app-container {
       background: white;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+
     }
 
     .top-bar {
@@ -46,11 +49,10 @@
       width: 28px;
       height: 28px;
       margin-right: 0.75rem;
-      background-image: url('https://img.icons8.com/ios-filled/50/00695c/home.png');
+      background-image: url('https://img.icons8.com/ios-filled/50/d8a7ff/home.png');
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
-
       flex-shrink: 0;
     }
 
@@ -66,7 +68,7 @@
     .progress-bar {
       height: 100%;
       width: 50%; 
-      background-color: #ffcc00;
+      background-color: #d8a7ff;
     }
 
     .lesson-title {
@@ -160,12 +162,12 @@
     }
 
     .match-item.correct {
-    background-color: #a5d6a7; /* green */
+    background-color: #a5d6a7;
     border-color: #388e3c;
     }
 
     .match-item.wrong {
-    background-color: #ef9a9a; /* red */
+    background-color: #ef9a9a;
     border-color: #c62828;
     }
 
@@ -566,7 +568,6 @@ function checkMatchCompletion() {
   }
 }
 
-// Call to render columns on load
 renderColumns();
     function playLetterAudio(letterId) {
         const audio = document.getElementById(`audio-${letterId}`);
