@@ -580,7 +580,6 @@
 
     }
 
-    // Initialize on load
     renderTripletItems();
 
     function playLetterAudio(letterId) {
