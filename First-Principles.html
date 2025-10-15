@@ -474,7 +474,6 @@
     });
   });
 
-
 const matchPairs = [
   { id: 1, func: 'f(x)=x', deriv: '1' },
   { id: 2, func: 'f(x)=x<sup>2</sup>', deriv: '2x' },
@@ -492,51 +491,54 @@ function shuffle(array) {
     .map(({ value }) => value);
 }
 
-// Render the new matching board
-function renderMatchBoard() {
-  const matchBoard = document.getElementById('match-board');
-  matchBoard.innerHTML = "";
-
-  const funcs = shuffle(matchPairs.map(p => ({ label: p.func, id: p.id, type: 'func' })));
-  const derivs = shuffle(matchPairs.map(p => ({ label: p.deriv, id: p.id, type: 'deriv' })));
-
-  // Make two columns: functions and derivatives
-  funcs.forEach((func, i) => {
-    const div = document.createElement('div');
-    div.className = 'match-item';
-    div.innerHTML = func.label;
-    div.dataset.id = func.id;
-    div.dataset.type = 'func';
-    div.onclick = () => selectMatchItem(div);
-    matchBoard.appendChild(div);
-  });
-
-  derivs.forEach((deriv, i) => {
-    const div = document.createElement('div');
-    div.className = 'match-item';
-    div.innerHTML = deriv.label;
-    div.dataset.id = deriv.id;
-    div.dataset.type = 'deriv';
-    div.onclick = () => selectMatchItem(div);
-    matchBoard.appendChild(div);
-  });
-}
-
 let selectedFunc = null;
 let selectedDeriv = null;
 
-function selectMatchItem(itemDiv) {
-  if (itemDiv.classList.contains('correct')) return; // already matched
+function renderColumns() {
+  const funcCol = document.getElementById('function-column');
+  const derivCol = document.getElementById('derivative-column');
+  funcCol.innerHTML = "";
+  derivCol.innerHTML = "";
 
-  if (itemDiv.dataset.type === 'func') {
-    if (selectedFunc) selectedFunc.style.boxShadow = '';
-    selectedFunc = itemDiv;
-    itemDiv.style.boxShadow = '0 0 10px #4285f4';
-  } else if (itemDiv.dataset.type === 'deriv') {
-    if (selectedDeriv) selectedDeriv.style.boxShadow = '';
-    selectedDeriv = itemDiv;
-    itemDiv.style.boxShadow = '0 0 10px #4285f4';
-  }
+  const funcs = shuffle(matchPairs.map(p => ({ label: p.func, id: p.id })));
+  const derivs = shuffle(matchPairs.map(p => ({ label: p.deriv, id: p.id })));
+
+  funcs.forEach(item => {
+    const div = document.createElement('div');
+    div.className = 'match-item';
+    div.innerHTML = item.label;
+    div.dataset.id = item.id;
+    div.onclick = () => selectFunc(div);
+    funcCol.appendChild(div);
+  });
+
+  derivs.forEach(item => {
+    const div = document.createElement('div');
+    div.className = 'match-item';
+    div.innerHTML = item.label;
+    div.dataset.id = item.id;
+    div.onclick = () => selectDeriv(div);
+    derivCol.appendChild(div);
+  });
+}
+
+function selectFunc(itemDiv) {
+  if (itemDiv.classList.contains('correct')) return;
+  if (selectedFunc) selectedFunc.style.boxShadow = '';
+  selectedFunc = itemDiv;
+  itemDiv.style.boxShadow = '0 0 10px #4285f4';
+  tryMatch();
+}
+
+function selectDeriv(itemDiv) {
+  if (itemDiv.classList.contains('correct')) return;
+  if (selectedDeriv) selectedDeriv.style.boxShadow = '';
+  selectedDeriv = itemDiv;
+  itemDiv.style.boxShadow = '0 0 10px #4285f4';
+  tryMatch();
+}
+
+function tryMatch() {
   if (selectedFunc && selectedDeriv) {
     checkMatchPair();
   }
@@ -570,19 +572,19 @@ function checkMatchPair() {
 }
 
 function checkMatchCompletion() {
-  const matchBoard = document.getElementById('match-board');
-  const remaining = [...matchBoard.querySelectorAll('.match-item')].filter(
-    item => !item.classList.contains('correct')
-  );
+  const funcCol = document.getElementById('function-column');
+  const derivCol = document.getElementById('derivative-column');
+  const remainingFuncs = [...funcCol.querySelectorAll('.match-item')].filter(item => !item.classList.contains('correct'));
+  const remainingDerivs = [...derivCol.querySelectorAll('.match-item')].filter(item => !item.classList.contains('correct'));
   const feedback = document.getElementById('match-feedback');
-  if (remaining.length === 0) {
+  if (remainingFuncs.length === 0 && remainingDerivs.length === 0) {
     feedback.textContent = 'Well done!';
     feedback.style.color = '#388e3c';
   }
 }
 
-// Call to render the game
-renderMatchBoard();
+// Call to render columns on load
+renderColumns();
     function playLetterAudio(letterId) {
         const audio = document.getElementById(`audio-${letterId}`);
         if (audio) {
