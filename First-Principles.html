@@ -26,15 +26,7 @@
 
 
     .app-container {
-      width: 100%;
-      max-width: 400px;
-      height: 100vh;
       background: white;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1); /* optional: phone shadow */
-      border-radius: 12px; /* optional: rounded edges */
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
     }
 
     .top-bar {
@@ -73,7 +65,7 @@
 
     .progress-bar {
       height: 100%;
-      width: 50%; /* Adjust based on progress */
+      width: 50%; 
       background-color: #ffcc00;
     }
 
@@ -84,20 +76,10 @@
       flex-shrink: 0;
       font-family: 'League Spartan', sans-serif;
     }
-
-    .app-container {
-    width: 100%;
-    max-width: 400px;
-    height: 100vh;
-    background: white;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    }
-
+    
     .slider {
     display: flex;
-    flex: 1; /* Fills remaining height of .app-container */
+    flex: 1;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     }
