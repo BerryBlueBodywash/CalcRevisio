@@ -154,13 +154,12 @@
     .match-item {
     background-color: #ffffff;
     border: 2px solid #ccc;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     padding: 1rem 1.5rem;
     border-radius: 16px;
     font-size: 2rem;
     text-align: center;
     cursor: pointer;
-    transition: background-color 0.3s, box-shadow 0.3s;
+    transition: background-color 0.3s
     user-select: none;
     }
 
@@ -511,17 +510,7 @@ function renderColumns() {
 
 function selectFunc(itemDiv) {
   if (itemDiv.classList.contains('correct')) return;
-  if (selectedFunc) selectedFunc.style.boxShadow = '';
   selectedFunc = itemDiv;
-  itemDiv.style.boxShadow = '0 0 10px #4285f4';
-  tryMatch();
-}
-
-function selectDeriv(itemDiv) {
-  if (itemDiv.classList.contains('correct')) return;
-  if (selectedDeriv) selectedDeriv.style.boxShadow = '';
-  selectedDeriv = itemDiv;
-  itemDiv.style.boxShadow = '0 0 10px #4285f4';
   tryMatch();
 }
 
@@ -538,8 +527,6 @@ function checkMatchPair() {
     selectedDeriv.classList.add('correct');
     feedback.textContent = 'Correct!';
     feedback.style.color = '#388e3c';
-    selectedFunc.style.boxShadow = '';
-    selectedDeriv.style.boxShadow = '';
     checkMatchCompletion();
   } else {
     selectedFunc.classList.add('wrong');
@@ -549,8 +536,6 @@ function checkMatchPair() {
     setTimeout(() => {
       selectedFunc.classList.remove('wrong');
       selectedDeriv.classList.remove('wrong');
-      selectedFunc.style.boxShadow = '';
-      selectedDeriv.style.boxShadow = '';
       feedback.textContent = '';
     }, 800);
   }
