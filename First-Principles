@@ -478,7 +478,7 @@
         { group: 'a', items: ['f(x)=x', '1'] },
         { group: 'a', items: ['f(x)=x<sup>2</sup>', 'f'(x)=2x'] },
         { group: 'b', items: ['f(x)=x<sup>3</sup>', 'f'(x)=3x<sup>2</sup>] },
-        { group: 'c', items: ['f(x)=2x<sup>2</sup>]', 'f'(x)=4x'] },
+        { group: 'c', items: ['f(x)=2x<sup>2</sup>', 'f'(x)=4x'] },
         { group: 'c', items: ['f(x)=8x<sup>2</sup>', 'f'(x)=16x'] },
         { group: 'c', items: ['f(x)=6x<sup>3</sup>', 'f'(x)=18x<sup>2</sup>'] },
 
