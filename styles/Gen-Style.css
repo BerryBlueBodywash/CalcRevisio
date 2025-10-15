@@ -75,7 +75,6 @@
       text-decoration: none;
     }
 
-    /* Position lessons in the correct order */
     .lesson:nth-child(1) { grid-column: 1; grid-row: 1; }
     .lesson:nth-child(2) { grid-column: 2; grid-row: 1; }
     .lesson:nth-child(3) { grid-column: 1; grid-row: 2; }
@@ -123,4 +122,101 @@
       }
       .arrow { display: none; }
     }
+
+  .practice {
+    background: #aaf6f1;
+    color: rgb(0, 0, 0);
+    margin: 0 auto;
+    width: 500px;
+    height: 150px;
+    border-radius: 20px;
+    text-align: center;
+    font-family: 'Patrick Hand', cursive;
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    text-decoration: none;
+  }
+
+  .test-results {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  .test-results h2 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+  }
+
+  .test-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    text-align: center;
+    background: #e1baff;
+    border-radius: 20px;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.2rem;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    transition: background 0.3s ease;
+  }
+
+  .test-tab {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 40px;
+    width: 100%;
+  }
+
+  .test-results {
+    width: 90%;
+    max-width: 900px;
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-sizing: border-box;
+  }
+
+  .test-results h2 {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .test-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    text-align: center;
+    font-weight: 900;
+    font-size: 1.3rem;
+    text-transform: lowercase;
+    margin-bottom: 0.8rem;
+    color: #000;
+  }
+
+  .test-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    text-align: center;
+    background: #e1baff;
+    border-radius: 20px;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.2rem;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    transition: background 0.3s ease;
+  }
+
+  .test-row:first-of-type {
+    background: #d5a9ff;
+    font-weight: bold;
+  }
 
