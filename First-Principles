@@ -474,114 +474,115 @@
     });
   });
 
-    const triplets = [
-        { group: 'a', items: ['f(x)=x', '1'] },
-        { group: 'a', items: ['f(x)=x<sup>2</sup>', 'f(x)=2x'] },
-        { group: 'b', items: ['f(x)=x<sup>3</sup>', 'f(x)=3x<sup>2</sup>] },
-        { group: 'c', items: ['f(x)=2x<sup>2</sup>', 'f(x)=4x'] },
-        { group: 'c', items: ['f(x)=8x<sup>2</sup>', 'f(x)=16x'] },
-        { group: 'c', items: ['f(x)=6x<sup>3</sup>', 'f(x)=18x<sup>2</sup>'] },
 
-
+const matchPairs = [
+  { id: 1, func: 'f(x)=x', deriv: '1' },
+  { id: 2, func: 'f(x)=x<sup>2</sup>', deriv: '2x' },
+  { id: 3, func: 'f(x)=x<sup>3</sup>', deriv: '3x<sup>2</sup>' },
+  { id: 4, func: 'f(x)=2x<sup>2</sup>', deriv: '4x' },
+  { id: 5, func: 'f(x)=8x<sup>2</sup>', deriv: '16x' },
+  { id: 6, func: 'f(x)=6x<sup>3</sup>', deriv: '18x<sup>2</sup>' },
 ];
 
-    let selected = null;
-    const matchBoard = document.getElementById('match-board');
-    let selectedGroup = [];
+// Helper: shuffle array
+function shuffle(array) {
+  return array
+    .map(value => ({ value, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ value }) => value);
+}
 
-    function shuffle(array) {
-    return array
-        .map(value => ({ value, sort: Math.random() }))
-        .sort((a, b) => a.sort - b.sort)
-        .map(({ value }) => value);
-    }
+// Render the new matching board
+function renderMatchBoard() {
+  const matchBoard = document.getElementById('match-board');
+  matchBoard.innerHTML = "";
 
-    function renderTripletItems() {
-    const allItems = triplets.flatMap(triplet =>
-        triplet.items.map(label => ({
-        label,
-        group: triplet.group
-        }))
-    );
+  const funcs = shuffle(matchPairs.map(p => ({ label: p.func, id: p.id, type: 'func' })));
+  const derivs = shuffle(matchPairs.map(p => ({ label: p.deriv, id: p.id, type: 'deriv' })));
 
-    matchBoard.innerHTML = '';
-    shuffle(allItems).forEach(item => {
-        const div = document.createElement('div');
-        div.className = 'match-item';
-        div.textContent = item.label;
-        div.dataset.group = item.group;
-        div.addEventListener('click', () => handleSelectTriple(div));
-        matchBoard.appendChild(div);
-    });
-    }
+  // Make two columns: functions and derivatives
+  funcs.forEach((func, i) => {
+    const div = document.createElement('div');
+    div.className = 'match-item';
+    div.innerHTML = func.label;
+    div.dataset.id = func.id;
+    div.dataset.type = 'func';
+    div.onclick = () => selectMatchItem(div);
+    matchBoard.appendChild(div);
+  });
 
-    function handleSelectTriple(itemDiv) {
-    if (itemDiv.classList.contains('correct')) return;
+  derivs.forEach((deriv, i) => {
+    const div = document.createElement('div');
+    div.className = 'match-item';
+    div.innerHTML = deriv.label;
+    div.dataset.id = deriv.id;
+    div.dataset.type = 'deriv';
+    div.onclick = () => selectMatchItem(div);
+    matchBoard.appendChild(div);
+  });
+}
 
-    if (selectedGroup.includes(itemDiv)) {
-        itemDiv.style.boxShadow = '';
-        selectedGroup = selectedGroup.filter(el => el !== itemDiv);
-        return;
-    }
+let selectedFunc = null;
+let selectedDeriv = null;
 
-    selectedGroup.push(itemDiv);
+function selectMatchItem(itemDiv) {
+  if (itemDiv.classList.contains('correct')) return; // already matched
+
+  if (itemDiv.dataset.type === 'func') {
+    if (selectedFunc) selectedFunc.style.boxShadow = '';
+    selectedFunc = itemDiv;
     itemDiv.style.boxShadow = '0 0 10px #4285f4';
+  } else if (itemDiv.dataset.type === 'deriv') {
+    if (selectedDeriv) selectedDeriv.style.boxShadow = '';
+    selectedDeriv = itemDiv;
+    itemDiv.style.boxShadow = '0 0 10px #4285f4';
+  }
+  if (selectedFunc && selectedDeriv) {
+    checkMatchPair();
+  }
+}
 
-    if (selectedGroup.length === 2) {
-        const allSameGroup = selectedGroup.every(
-        el => el.dataset.group === selectedGroup[0].dataset.group
-        );
+function checkMatchPair() {
+  const feedback = document.getElementById('match-feedback');
+  if (selectedFunc.dataset.id === selectedDeriv.dataset.id) {
+    selectedFunc.classList.add('correct');
+    selectedDeriv.classList.add('correct');
+    feedback.textContent = 'Correct!';
+    feedback.style.color = '#388e3c';
+    selectedFunc.style.boxShadow = '';
+    selectedDeriv.style.boxShadow = '';
+    checkMatchCompletion();
+  } else {
+    selectedFunc.classList.add('wrong');
+    selectedDeriv.classList.add('wrong');
+    feedback.textContent = 'Try again!';
+    feedback.style.color = 'red';
+    setTimeout(() => {
+      selectedFunc.classList.remove('wrong');
+      selectedDeriv.classList.remove('wrong');
+      selectedFunc.style.boxShadow = '';
+      selectedDeriv.style.boxShadow = '';
+      feedback.textContent = '';
+    }, 800);
+  }
+  selectedFunc = null;
+  selectedDeriv = null;
+}
 
-        if (allSameGroup) {
-        selectedGroup.forEach(el => {
-            el.classList.add('correct');
-            el.style.boxShadow = '';
-        });
-        selectedGroup = [];
-        checkTripleCompletion();
-        } else {
-        selectedGroup.forEach(el => el.classList.add('wrong'));
-        feedback.textContent = 'Try again!';
-        setTimeout(() => {
-            selectedGroup.forEach(el => {
-            el.classList.remove('wrong');
-            el.style.boxShadow = '';
-            });
-            selectedGroup = [];
-            feedback.textContent = '';
-        }, 800);
-        }
-    }
-    }
+function checkMatchCompletion() {
+  const matchBoard = document.getElementById('match-board');
+  const remaining = [...matchBoard.querySelectorAll('.match-item')].filter(
+    item => !item.classList.contains('correct')
+  );
+  const feedback = document.getElementById('match-feedback');
+  if (remaining.length === 0) {
+    feedback.textContent = 'Well done!';
+    feedback.style.color = '#388e3c';
+  }
+}
 
-    function checkTripleCompletion() {
-    const remaining = [...matchBoard.querySelectorAll('.match-item')].filter(
-        item => !item.classList.contains('correct')
-    );
-    if (remaining.length === 0) {
-        feedback.textContent = 'Well done!';
-        feedback.style.color = '#388e3c';
-    }
-    }
-
-
-    const feedback = document.getElementById('match-feedback');
-
-    function shuffle(array) {
-        return array
-        .map(value => ({ value, sort: Math.random() }))
-        .sort((a, b) => a.sort - b.sort)
-        .map(({ value }) => value);
-    }
-
-
-    function handleSelect(itemDiv) {
-        if (itemDiv.classList.contains('correct')) return; // already matched
-
-    }
-
-    renderTripletItems();
-
+// Call to render the game
+renderMatchBoard();
     function playLetterAudio(letterId) {
         const audio = document.getElementById(`audio-${letterId}`);
         if (audio) {
