@@ -469,7 +469,11 @@ const matchPairs = [
   { id: 6, func: 'f(x)=6x<sup>3</sup>', deriv: '18x<sup>2</sup>' },
 ];
 
-// Helper: shuffle array
+function selectDeriv(itemDiv) {
+  if (itemDiv.classList.contains('correct')) return;
+  selectedDeriv = itemDiv;
+  tryMatch();
+}
 function shuffle(array) {
   return array
     .map(value => ({ value, sort: Math.random() }))
