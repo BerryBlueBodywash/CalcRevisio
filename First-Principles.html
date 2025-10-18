@@ -185,8 +185,7 @@
 
     <div class="slider" id="slider">
 
-      <!-- Slide 1: What is Calculus? -->
-      <section class="slide">
+       <section class="slide">
         <div class="text-card">
           <p>
             <span class="highlight-bold">Calculus</span> is the branch of mathematics that studies <span class="highlight-blue">change</span>. Its two main ideas are <span class="highlight-bold">derivatives</span> (how things change instantly) and <span class="highlight-bold">integrals</span> (adding up change).
@@ -198,7 +197,6 @@
         </div>
       </section>
 
-      <!-- Slide 2: The Derivative - Instant Rate of Change -->
       <section class="slide">
         <div class="text-card">
           <p>
@@ -227,7 +225,6 @@
         </div>
       </section>
 
-      <!-- Slide 4: Why Derivatives Matter -->
       <section class="slide">
         <div class="text-card">
           <p>
@@ -240,7 +237,6 @@
         </div>
       </section>
 
-      <!-- New Slide: Learn More With Videos -->
       <section class="slide">
         <div class="text-card" style="text-align: center;">
           <h2>Watch and Learn!</h2>
@@ -255,20 +251,15 @@
         </div>
       </section>
 
-      <!-- All remaining original slides stay unchanged: -->
 
-      <!--Letter: Shoria-->
-      <!-- Page Type 4 - Letter Introduction Card -->
       <section class="slide">
         <div class="text-card">
 
-          <!-- Letter boxes -->
           <div style="display: flex; justify-content: space-around; margin: 1rem 0;">
             <div style="background-color: #ffcc00; padding: 1rem 1.5rem; border-radius: 20px; font-size: 2.5rem;">আ</div>
             <div style="background-color: #ffcc00; padding: 1rem 1.5rem; border-radius: 20px; font-size: 2.5rem;">◌া</div>
           </div>
 
-          <!-- Letter name + sound + audio -->
           <div style="display: flex; justify-content: space-between; align-items: center;">
             <div>
               <p style="margin: 0; font-weight: bold;">SHORIA</p>
@@ -280,16 +271,13 @@
             <audio id="audio-shoria" src="audio/shoria.mp3"></audio>
           </div>
           
-          <!-- Words with আ -->
           <p style="font-weight: bold; margin-top: 1.5rem;">Words With আ</p>
 
           <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem;">
-            <!-- Word 1 -->
             <div style="width: 45%; text-align: center;">
               <img src="images/mango.png" alt="Mango" style="width: 100%; max-height: autopx;" />
             </div>
 
-            <!-- Word 2 -->
             <div style="width: 45%; text-align: center;">
               <img src="images/playing.png" alt="Playing" style="width: 100%; max-height: autopx;" />
             </div>
@@ -297,7 +285,6 @@
         </div>
       </section>
 
-      <!-- Page Type 3 - Guided Tracing -->
       <section class="slide">
         <div class="text-card">
           <p style="margin-bottom: 1rem;">The derivative can be found using the power rule <span class="highlight-red" style="font-size: 1.5rem;">আ</span> following the stroke order.</p>
@@ -309,7 +296,6 @@
         </div>
       </section>
 
-      <!-- Page Type 4 - Free Tracing -->
       <section class="slide">
         <div class="text-card">
           <p style="margin-bottom: 1rem;">Now trace without the letter without any guide.</p>
@@ -321,10 +307,9 @@
         </div>
       </section>
 
-      <!-- Page Type 5 - Mix and Match Game -->
       <section class="slide">
         <div class="text-card">
-          <p style="font-weight: bold; text-align: center;">Match the independent forms, dependent forms, and sounds</p>
+          <p style="font-weight: bold; text-align: center;">Match the function with it's derivative!</p>
       
           <div id="match-board" style="display: flex; gap: 2rem; justify-content: center; margin-top: 1.5rem;">
             <div id="function-column" style="width: 180px;"></div>
@@ -336,7 +321,6 @@
         </div>
       </section>
 
-      <!-- Page Type 6 - Ending Summary Screen -->
       <section class="slide">
         <div class="text-card" style="text-align: center;">
           <h2 style="margin-top: 0.5rem;">First Principles - Lesson I</h2>
@@ -482,7 +466,6 @@
         feedbackEl.textContent = drawn ? '' : 'Try tracing more carefully!';
       }
 
-      // Initialize all canvases
       canvasTypes.forEach(type => {
         letters.forEach(letter => {
           const id = `${type}_${letter}`;
