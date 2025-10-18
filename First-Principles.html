@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>First Principles - Lesson I</title>
-  <!-- Matching Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet" />
 
@@ -209,7 +208,6 @@
         </div>
       </section>
 
-      <!-- Slide 3: Power Rule - Fast Derivatives -->
       <section class="slide">
         <div class="text-card">
           <p>
@@ -228,7 +226,7 @@
       <section class="slide">
         <div class="text-card">
           <p>
-            <span class="highlight-bold">Derivatives</span> are everywhere! They’re used in physics to find velocity and acceleration, in economics to optimize profit, and in biology to study growth rates.
+            <span class="highlight-bold">Derivatives</span> are everywher! They’re used in physics to find velocity and acceleration, in economics to optimise profit, and in biology to study growth rates.
           </p>
           <p>
             Understanding how things change lets us predict, control, and improve the world around us.
@@ -242,70 +240,16 @@
           <h2>Watch and Learn!</h2>
           <p>Here are four video links to deepen your understanding of calculus and derivatives:</p>
           <div style="display: flex; flex-direction: column; gap: 1rem; margin: 2rem 0;">
-            <a href="#" target="_blank" style="background: #e1baff; padding: 0.75rem 1rem; border-radius: 12px; font-weight: bold; text-decoration: none; color: #333;">Video 1: What is Calculus?</a>
-            <a href="#" target="_blank" style="background: #e1baff; padding: 0.75rem 1rem; border-radius: 12px; font-weight: bold; text-decoration: none; color: #333;">Video 2: Derivatives Explained</a>
-            <a href="#" target="_blank" style="background: #e1baff; padding: 0.75rem 1rem; border-radius: 12px; font-weight: bold; text-decoration: none; color: #333;">Video 3: Power Rule Tutorial</a>
-            <a href="#" target="_blank" style="background: #e1baff; padding: 0.75rem 1rem; border-radius: 12px; font-weight: bold; text-decoration: none; color: #333;">Video 4: Real-Life Applications</a>
+            <a href="#" target="_blank" style="background: #e1baff; padding: 0.75rem 1rem; border-radius: 12px; font-weight: bold; text-decoration: none; color: #333;">Video 1: First Principles?</a>
+            <a href="#" target="_blank" style="background: #e1baff; padding: 0.75rem 1rem; border-radius: 12px; font-weight: bold; text-decoration: none; color: #333;">Video 2: Intro to Calculus Part 1</a>
+            <a href="#" target="_blank" style="background: #e1baff; padding: 0.75rem 1rem; border-radius: 12px; font-weight: bold; text-decoration: none; color: #333;">Video 3: Intro to Calculus Part 2</a>
+            <a href="#" target="_blank" style="background: #e1baff; padding: 0.75rem 1rem; border-radius: 12px; font-weight: bold; text-decoration: none; color: #333;">Video 4: Introduction to the Derivative</a>
           </div>
           <p style="font-size: 0.95rem;">Press Home To Exit</p>
         </div>
       </section>
 
 
-      <section class="slide">
-        <div class="text-card">
-
-          <div style="display: flex; justify-content: space-around; margin: 1rem 0;">
-            <div style="background-color: #ffcc00; padding: 1rem 1.5rem; border-radius: 20px; font-size: 2.5rem;">আ</div>
-            <div style="background-color: #ffcc00; padding: 1rem 1.5rem; border-radius: 20px; font-size: 2.5rem;">◌া</div>
-          </div>
-
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <div>
-              <p style="margin: 0; font-weight: bold;">SHORIA</p>
-              <p style="margin: 0;">a (ah)</p>
-            </div>
-            <button onclick="playLetterAudio('shoria')" style="background: #4285f4; border: none; border-radius: 50%; padding: 0.5rem;">
-              🔊
-            </button>
-            <audio id="audio-shoria" src="audio/shoria.mp3"></audio>
-          </div>
-          
-          <p style="font-weight: bold; margin-top: 1.5rem;">Words With আ</p>
-
-          <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem;">
-            <div style="width: 45%; text-align: center;">
-              <img src="images/mango.png" alt="Mango" style="width: 100%; max-height: autopx;" />
-            </div>
-
-            <div style="width: 45%; text-align: center;">
-              <img src="images/playing.png" alt="Playing" style="width: 100%; max-height: autopx;" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="slide">
-        <div class="text-card">
-          <p style="margin-bottom: 1rem;">The derivative can be found using the power rule <span class="highlight-red" style="font-size: 1.5rem;">আ</span> following the stroke order.</p>
-          <canvas id="tracingCanvasGuide_a" width="300" height="300" style="border:1px solid #ccc; display: block; margin: 1rem auto; background: url('images/a-stroke-guide.png') center/contain no-repeat;"></canvas>
-          <p id="feedbackGuide_a" style="color: red; font-weight: bold; text-align: center;"></p>
-          <div style="text-align: center; margin-top: 1rem;">
-            <button onclick="clearCanvas('Guide_a')" style="padding: 0.5rem 1rem; background: #00695c; color: white; border: none; border-radius: 8px;">Try Again</button>
-          </div>
-        </div>
-      </section>
-
-      <section class="slide">
-        <div class="text-card">
-          <p style="margin-bottom: 1rem;">Now trace without the letter without any guide.</p>
-          <canvas id="tracingCanvasBlind_a" width="300" height="300" style="border:1px solid #ccc; display: block; margin: 1rem auto;"></canvas>
-          <p id="feedbackBlind_a" style="color: red; font-weight: bold; text-align: center;"></p>
-          <div style="text-align: center; margin-top: 1rem;">
-            <button onclick="clearCanvas('Blind_a')" style="padding: 0.5rem 1rem; background: #00695c; color: white; border: none; border-radius: 8px;">Try Again</button>
-          </div>
-        </div>
-      </section>
 
       <section class="slide">
         <div class="text-card">
@@ -328,7 +272,7 @@
 
           <div style="background: #ffcc00; padding: 1rem; border-radius: 16px; margin: 1.5rem 0;">
             <p style="margin: 0; font-weight: bold;">Learned</p>
-            <p style="font-size: 1.5rem;">অ আ ই ঈ উ ঊ</p>
+            <p style="font-size: 1.5rem;">First Principles</p>
           </div>
 
           <div style="background: #ffcc00; padding: 1rem; border-radius: 16px; margin: 1.5rem 0;">
