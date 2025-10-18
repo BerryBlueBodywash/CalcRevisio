@@ -23,7 +23,6 @@
       min-height: 100%;
     }
 
-
     .app-container {
       background: white;
     }
@@ -76,28 +75,28 @@
     }
 
     .app-container {
-    background: white;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
     }
 
     .slider {
-    display: flex;
-    flex: 1;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
+      display: flex;
+      flex: 1;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
     }
 
     .slide {
-    flex: 0 0 100%;
-    scroll-snap-align: start;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    overflow-y: auto;
-    padding: 1rem 1rem;
+      flex: 0 0 100%;
+      scroll-snap-align: start;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      overflow-y: auto;
+      padding: 1rem 1rem;
     }
 
     .text-card {
@@ -152,25 +151,25 @@
     }
 
     .match-item {
-    background-color: #ffffff;
-    border: 2px solid #ccc;
-    padding: 1rem 1.5rem;
-    border-radius: 16px;
-    font-size: 2rem;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.3s
-    user-select: none;
+      background-color: #ffffff;
+      border: 2px solid #ccc;
+      padding: 1rem 1.5rem;
+      border-radius: 16px;
+      font-size: 2rem;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color 0.3s
+      user-select: none;
     }
 
     .match-item.correct {
-    background-color: #a5d6a7;
-    border-color: #388e3c;
+      background-color: #a5d6a7;
+      border-color: #388e3c;
     }
 
     .match-item.wrong {
-    background-color: #ef9a9a;
-    border-color: #c62828;
+      background-color: #ef9a9a;
+      border-color: #c62828;
     }
   </style>
 </head>
@@ -186,47 +185,79 @@
 
     <div class="slider" id="slider">
 
-
-      <!-- Page 2 --> 
+      <!-- Slide 1: What is Calculus? -->
       <section class="slide">
         <div class="text-card">
-          <p>The gradient of curved lines can be shown as the <span class="highlight-bold">derivative</span>.</p>
-          <p>The derivative represents the <span class="highlight-blue"> instantaneuous rate of change</span>-<span class="highlight-red">vowel</span> of a point on a <span class="highlight-bold">units</span>.</p>
-          <p>These units are <span class="highlight-bold">syllables</span></p>
-          <img class="bangla-image" src="images/amar-diagram.png" alt="amar triangle diagram" />
-          <p>Lets start with the derivative of x<sup>2</sup>!</p>
+          <p>
+            <span class="highlight-bold">Calculus</span> is the branch of mathematics that studies <span class="highlight-blue">change</span>. Its two main ideas are <span class="highlight-bold">derivatives</span> (how things change instantly) and <span class="highlight-bold">integrals</span> (adding up change).
+          </p>
+          <p>
+            Derivatives help us answer questions like: “How fast am I going <em>right now</em>?” or “How does a curve bend at this point?”
+          </p>
+          <img src="images/calculus-curve.png" alt="Curve with tangent" class="bangla-image" />
         </div>
       </section>
 
-      <!-- Page 3 --> 
+      <!-- Slide 2: The Derivative - Instant Rate of Change -->
       <section class="slide">
         <div class="text-card">
-          <p> Vowel Notation comes second in the form of a diacritic - symbols added to consonants</p>
-          <p>Every vowel has a <span class="highlight-bold">whole form</span> (আ) and a <span class="highlight-bold">diacritic form</span> (া). </p>
-          <img class="bangla-image" src="images/whole-vs-diacritic-form.png" alt="Two vorms of Bangla First Principles" />
-          <p>These are also known as independent and dependent forms.</p>
+          <p>
+            The <span class="highlight-bold">derivative</span> of a function tells us its <span class="highlight-blue">instantaneous rate of change</span> at any point.
+          </p>
+          <p>
+            For a straight line, the derivative is just its slope. For curves, the derivative is the slope of the <span class="highlight-red">tangent</span> at a single point.
+          </p>
+          <img src="images/tangent-slope.png" alt="Tangent line on a curve" class="bangla-image" />
         </div>
       </section>
 
-        <!-- Page 3 -->
+      <!-- Slide 3: Power Rule - Fast Derivatives -->
       <section class="slide">
         <div class="text-card">
-          <p>Independent <span class="highlight-red">First Principles</span> can exist by themselves.</p>
-          <p>They are typically used at the <span class="highlight-bold">start of a syllable</span>.</p>
-          <img class="bangla-image" src="imag/es/am-diagram.png" alt="Bangla word amar" />
+          <p>
+            One of the most important rules in calculus is the <span class="highlight-bold">power rule</span>:
+          </p>
+          <p>
+            If <span class="highlight-bold">f(x) = xⁿ</span>, then <span class="highlight-blue">f'(x) = n·xⁿ⁻¹</span>
+          </p>
+          <p>
+            Example: The derivative of <span class="highlight-bold">x²</span> is <span class="highlight-blue">2x</span>. The derivative of <span class="highlight-bold">x³</span> is <span class="highlight-blue">3x²</span>.
+          </p>
+          <img src="images/power-rule.png" alt="Power rule example" class="bangla-image" />
         </div>
       </section>
 
-              <!-- Page 4 -->
-            <section class="slide">
+      <!-- Slide 4: Why Derivatives Matter -->
+      <section class="slide">
         <div class="text-card">
-          <p>Dependent First Principles have to be attached to a consonant.</p>
-          <p>They can come before, after, above, or below their attached consonant.</p>
-          <img class="bangla-image" src="images/bangla-First Principles.png" alt="Bangla First Principles" />
+          <p>
+            <span class="highlight-bold">Derivatives</span> are everywhere! They’re used in physics to find velocity and acceleration, in economics to optimize profit, and in biology to study growth rates.
+          </p>
+          <p>
+            Understanding how things change lets us predict, control, and improve the world around us.
+          </p>
+          <img src="images/applications.png" alt="Applications of derivatives" class="bangla-image" />
         </div>
       </section>
-  
-                                                          <!--Letter: Shoria-->
+
+      <!-- New Slide: Learn More With Videos -->
+      <section class="slide">
+        <div class="text-card" style="text-align: center;">
+          <h2>Watch and Learn!</h2>
+          <p>Here are four video links to deepen your understanding of calculus and derivatives:</p>
+          <div style="display: flex; flex-direction: column; gap: 1rem; margin: 2rem 0;">
+            <a href="#" target="_blank" style="background: #e1baff; padding: 0.75rem 1rem; border-radius: 12px; font-weight: bold; text-decoration: none; color: #333;">Video 1: What is Calculus?</a>
+            <a href="#" target="_blank" style="background: #e1baff; padding: 0.75rem 1rem; border-radius: 12px; font-weight: bold; text-decoration: none; color: #333;">Video 2: Derivatives Explained</a>
+            <a href="#" target="_blank" style="background: #e1baff; padding: 0.75rem 1rem; border-radius: 12px; font-weight: bold; text-decoration: none; color: #333;">Video 3: Power Rule Tutorial</a>
+            <a href="#" target="_blank" style="background: #e1baff; padding: 0.75rem 1rem; border-radius: 12px; font-weight: bold; text-decoration: none; color: #333;">Video 4: Real-Life Applications</a>
+          </div>
+          <p style="font-size: 0.95rem;">Press Home To Exit</p>
+        </div>
+      </section>
+
+      <!-- All remaining original slides stay unchanged: -->
+
+      <!--Letter: Shoria-->
       <!-- Page Type 4 - Letter Introduction Card -->
       <section class="slide">
         <div class="text-card">
@@ -266,312 +297,312 @@
         </div>
       </section>
 
-
       <!-- Page Type 3 - Guided Tracing -->
-          <section class="slide">
-          <div class="text-card">
-              <p style="margin-bottom: 1rem;">The derivative can be found using the power rule <span class="highlight-red" style="font-size: 1.5rem;">আ</span> following the stroke order.</p>
-              <canvas id="tracingCanvasGuide_a" width="300" height="300" style="border:1px solid #ccc; display: block; margin: 1rem auto; background: url('images/a-stroke-guide.png') center/contain no-repeat;"></canvas>
-              <p id="feedbackGuide_a" style="color: red; font-weight: bold; text-align: center;"></p>
-              <div style="text-align: center; margin-top: 1rem;">
-              <button onclick="clearCanvas('Guide_a')" style="padding: 0.5rem 1rem; background: #00695c; color: white; border: none; border-radius: 8px;">Try Again</button>
-              </div>
+      <section class="slide">
+        <div class="text-card">
+          <p style="margin-bottom: 1rem;">The derivative can be found using the power rule <span class="highlight-red" style="font-size: 1.5rem;">আ</span> following the stroke order.</p>
+          <canvas id="tracingCanvasGuide_a" width="300" height="300" style="border:1px solid #ccc; display: block; margin: 1rem auto; background: url('images/a-stroke-guide.png') center/contain no-repeat;"></canvas>
+          <p id="feedbackGuide_a" style="color: red; font-weight: bold; text-align: center;"></p>
+          <div style="text-align: center; margin-top: 1rem;">
+            <button onclick="clearCanvas('Guide_a')" style="padding: 0.5rem 1rem; background: #00695c; color: white; border: none; border-radius: 8px;">Try Again</button>
           </div>
-          </section>
+        </div>
+      </section>
 
       <!-- Page Type 4 - Free Tracing -->
       <section class="slide">
-      <div class="text-card">
+        <div class="text-card">
           <p style="margin-bottom: 1rem;">Now trace without the letter without any guide.</p>
           <canvas id="tracingCanvasBlind_a" width="300" height="300" style="border:1px solid #ccc; display: block; margin: 1rem auto;"></canvas>
           <p id="feedbackBlind_a" style="color: red; font-weight: bold; text-align: center;"></p>
           <div style="text-align: center; margin-top: 1rem;">
-          <button onclick="clearCanvas('Blind_a')" style="padding: 0.5rem 1rem; background: #00695c; color: white; border: none; border-radius: 8px;">Try Again</button>
+            <button onclick="clearCanvas('Blind_a')" style="padding: 0.5rem 1rem; background: #00695c; color: white; border: none; border-radius: 8px;">Try Again</button>
           </div>
-      </div>
+        </div>
       </section>
 
-
-    <!-- Page Type 5 - Mix and Match Game -->
-    <section class="slide">
-      <div class="text-card">
-        <p style="font-weight: bold; text-align: center;">Match the independent forms, dependent forms, and sounds</p>
-    
-        <div id="match-board" style="display: flex; gap: 2rem; justify-content: center; margin-top: 1.5rem;">
-          <div id="function-column" style="width: 180px;"></div>
-          <div id="derivative-column" style="width: 180px;"></div>
+      <!-- Page Type 5 - Mix and Match Game -->
+      <section class="slide">
+        <div class="text-card">
+          <p style="font-weight: bold; text-align: center;">Match the independent forms, dependent forms, and sounds</p>
+      
+          <div id="match-board" style="display: flex; gap: 2rem; justify-content: center; margin-top: 1.5rem;">
+            <div id="function-column" style="width: 180px;"></div>
+            <div id="derivative-column" style="width: 180px;"></div>
+          </div>
+      
+          <p id="match-feedback" style="text-align: center; font-weight: bold; color: red; margin-top: 1rem;"></p>
+          <div class="nav-indicator">← 31 →</div>
         </div>
-    
-        <p id="match-feedback" style="text-align: center; font-weight: bold; color: red; margin-top: 1rem;"></p>
-        <div class="nav-indicator">← 31 →</div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Page Type 6 - Ending Summary Screen -->
-    <section class="slide">
-    <div class="text-card" style="text-align: center;">
-        <h2 style="margin-top: 0.5rem;">First Principles - Lesson I</h2>
-        <p style="font-weight: bold; font-size: 1.2rem;">Lesson Summary</p>
+      <!-- Page Type 6 - Ending Summary Screen -->
+      <section class="slide">
+        <div class="text-card" style="text-align: center;">
+          <h2 style="margin-top: 0.5rem;">First Principles - Lesson I</h2>
+          <p style="font-weight: bold; font-size: 1.2rem;">Lesson Summary</p>
 
-        <div style="background: #ffcc00; padding: 1rem; border-radius: 16px; margin: 1.5rem 0;">
-        <p style="margin: 0; font-weight: bold;">Learned</p>
-        <p style="font-size: 1.5rem;">অ আ ই ঈ উ ঊ</p>
+          <div style="background: #ffcc00; padding: 1rem; border-radius: 16px; margin: 1.5rem 0;">
+            <p style="margin: 0; font-weight: bold;">Learned</p>
+            <p style="font-size: 1.5rem;">অ আ ই ঈ উ ঊ</p>
+          </div>
+
+          <div style="background: #ffcc00; padding: 1rem; border-radius: 16px; margin: 1.5rem 0;">
+            <p style="margin: 0; font-weight: bold;">Matho Stars Earned</p>
+            <p style="font-size: 1.5rem;">15</p>
+          </div>
+
+          <h3 style="margin-top: 2rem; font-size: 1.5rem;">Good Job!</h3>
+          <p style="font-size: 1rem;">Press Home To Exit</p>
+
+          <div class="nav-indicator">← 32</div>
         </div>
+      </section>
 
-        <div style="background: #ffcc00; padding: 1rem; border-radius: 16px; margin: 1.5rem 0;">
-        <p style="margin: 0; font-weight: bold;">Matho Stars Earned</p>
-        <p style="font-size: 1.5rem;">15</p>
-        </div>
-
-        <h3 style="margin-top: 2rem; font-size: 1.5rem;">Good Job!</h3>
-        <p style="font-size: 1rem;">Press Home To Exit</p>
-
-        <div class="nav-indicator">← 32</div>
     </div>
-    </section>
-
-
     <script>
-    const slider = document.getElementById('slider');
-    const progressBar = document.querySelector('.progress-bar');
-    const totalSlides = slider.children.length;
-    let currentSlide = 0;
+      // (all original JS unchanged)
+      const slider = document.getElementById('slider');
+      const progressBar = document.querySelector('.progress-bar');
+      const totalSlides = slider.children.length;
+      let currentSlide = 0;
 
-    function getSlideWidth() {
+      function getSlideWidth() {
         return slider.clientWidth;
-    }
+      }
 
-    function goToSlide(index) {
+      function goToSlide(index) {
         currentSlide = Math.max(0, Math.min(index, totalSlides - 1));
         const slideWidth = getSlideWidth();
         slider.scrollTo({
-        left: currentSlide * slideWidth,
-        behavior: 'smooth'
+          left: currentSlide * slideWidth,
+          behavior: 'smooth'
         });
         updateProgressBar();
-    }
+      }
 
-    function updateProgressBar() {
+      function updateProgressBar() {
         const percent = ((currentSlide + 1) / totalSlides) * 100;
         progressBar.style.width = percent + '%';
-    }
+      }
 
-    document.addEventListener('keydown', (e) => {
+      document.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowRight') {
-        goToSlide(currentSlide + 1);
+          goToSlide(currentSlide + 1);
         } else if (e.key === 'ArrowLeft') {
-        goToSlide(currentSlide - 1);
+          goToSlide(currentSlide - 1);
         }
-    });
+      });
 
-    slider.addEventListener('scroll', () => {
+      slider.addEventListener('scroll', () => {
         const slideWidth = getSlideWidth();
         const index = Math.round(slider.scrollLeft / slideWidth);
         if (index !== currentSlide) {
-        currentSlide = index;
-        updateProgressBar();
+          currentSlide = index;
+          updateProgressBar();
         }
-    });
+      });
 
-  const canvasTypes = ['Guide', 'Blind'];
-  const letters = ['a']; // extend as needed
+      const canvasTypes = ['Guide', 'Blind'];
+      const letters = ['a']; // extend as needed
 
-  function getOffset(canvas, e) {
-    const rect = canvas.getBoundingClientRect();
-    return {
-      x: (e.clientX || e.touches?.[0]?.clientX) - rect.left,
-      y: (e.clientY || e.touches?.[0]?.clientY) - rect.top
-    };
-  }
-
-  function setupCanvas(id) {
-    const canvas = document.getElementById('tracingCanvas' + id);
-    const ctx = canvas.getContext('2d');
-    let drawing = false;
-
-    function startDraw(e) {
-      drawing = true;
-      const pos = getOffset(canvas, e);
-      ctx.beginPath();
-      ctx.moveTo(pos.x, pos.y);
-    }
-
-    function endDraw() {
-      drawing = false;
-      ctx.closePath();
-      validateDrawing(id);
-    }
-
-    function draw(e) {
-      if (!drawing) return;
-      const pos = getOffset(canvas, e);
-      ctx.lineWidth = 5;
-      ctx.lineCap = 'round';
-      ctx.strokeStyle = '#000';
-      ctx.lineTo(pos.x, pos.y);
-      ctx.stroke();
-      ctx.beginPath();
-      ctx.moveTo(pos.x, pos.y);
-    }
-
-    canvas.addEventListener('mousedown', startDraw);
-    canvas.addEventListener('mouseup', endDraw);
-    canvas.addEventListener('mouseout', endDraw);
-    canvas.addEventListener('mousemove', draw);
-
-    canvas.addEventListener('touchstart', startDraw, { passive: false });
-    canvas.addEventListener('touchend', endDraw);
-    canvas.addEventListener('touchcancel', endDraw);
-    canvas.addEventListener('touchmove', (e) => {
-      e.preventDefault();
-      draw(e);
-    }, { passive: false });
-  }
-
-  function clearCanvas(id) {
-    const canvas = document.getElementById('tracingCanvas' + id);
-    const ctx = canvas.getContext('2d');
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    document.getElementById('feedback' + id).textContent = '';
-  }
-
-  function validateDrawing(id) {
-    const canvas = document.getElementById('tracingCanvas' + id);
-    const ctx = canvas.getContext('2d');
-    const imageData = ctx.getImageData(100, 100, 100, 100);
-    let drawn = false;
-
-    for (let i = 0; i < imageData.data.length; i += 4) {
-      if (imageData.data[i + 3] > 20) {
-        drawn = true;
-        break;
+      function getOffset(canvas, e) {
+        const rect = canvas.getBoundingClientRect();
+        return {
+          x: (e.clientX || e.touches?.[0]?.clientX) - rect.left,
+          y: (e.clientY || e.touches?.[0]?.clientY) - rect.top
+        };
       }
-    }
 
-    const feedbackEl = document.getElementById('feedback' + id);
-    feedbackEl.textContent = drawn ? '' : 'Try tracing more carefully!';
-  }
+      function setupCanvas(id) {
+        const canvas = document.getElementById('tracingCanvas' + id);
+        const ctx = canvas.getContext('2d');
+        let drawing = false;
 
-  // Initialize all canvases
-  canvasTypes.forEach(type => {
-    letters.forEach(letter => {
-      const id = `${type}_${letter}`;
-      setupCanvas(id);
-    });
-  });
+        function startDraw(e) {
+          drawing = true;
+          const pos = getOffset(canvas, e);
+          ctx.beginPath();
+          ctx.moveTo(pos.x, pos.y);
+        }
 
-const matchPairs = [
-  { id: 1, func: 'f(x)=x', deriv: '1' },
-  { id: 2, func: 'f(x)=x<sup>2</sup>', deriv: '2x' },
-  { id: 3, func: 'f(x)=x<sup>3</sup>', deriv: '3x<sup>2</sup>' },
-  { id: 4, func: 'f(x)=2x<sup>2</sup>', deriv: '4x' },
-  { id: 5, func: 'f(x)=8x<sup>2</sup>', deriv: '16x' },
-  { id: 6, func: 'f(x)=6x<sup>3</sup>', deriv: '18x<sup>2</sup>' },
-];
+        function endDraw() {
+          drawing = false;
+          ctx.closePath();
+          validateDrawing(id);
+        }
 
-function selectDeriv(itemDiv) {
-  if (itemDiv.classList.contains('correct')) return;
-  selectedDeriv = itemDiv;
-  tryMatch();
-}
-function shuffle(array) {
-  return array
-    .map(value => ({ value, sort: Math.random() }))
-    .sort((a, b) => a.sort - b.sort)
-    .map(({ value }) => value);
-}
+        function draw(e) {
+          if (!drawing) return;
+          const pos = getOffset(canvas, e);
+          ctx.lineWidth = 5;
+          ctx.lineCap = 'round';
+          ctx.strokeStyle = '#000';
+          ctx.lineTo(pos.x, pos.y);
+          ctx.stroke();
+          ctx.beginPath();
+          ctx.moveTo(pos.x, pos.y);
+        }
 
-let selectedFunc = null;
-let selectedDeriv = null;
+        canvas.addEventListener('mousedown', startDraw);
+        canvas.addEventListener('mouseup', endDraw);
+        canvas.addEventListener('mouseout', endDraw);
+        canvas.addEventListener('mousemove', draw);
 
-function renderColumns() {
-  const funcCol = document.getElementById('function-column');
-  const derivCol = document.getElementById('derivative-column');
-  funcCol.innerHTML = "";
-  derivCol.innerHTML = "";
+        canvas.addEventListener('touchstart', startDraw, { passive: false });
+        canvas.addEventListener('touchend', endDraw);
+        canvas.addEventListener('touchcancel', endDraw);
+        canvas.addEventListener('touchmove', (e) => {
+          e.preventDefault();
+          draw(e);
+        }, { passive: false });
+      }
 
-  const funcs = shuffle(matchPairs.map(p => ({ label: p.func, id: p.id })));
-  const derivs = shuffle(matchPairs.map(p => ({ label: p.deriv, id: p.id })));
+      function clearCanvas(id) {
+        const canvas = document.getElementById('tracingCanvas' + id);
+        const ctx = canvas.getContext('2d');
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        document.getElementById('feedback' + id).textContent = '';
+      }
 
-  funcs.forEach(item => {
-    const div = document.createElement('div');
-    div.className = 'match-item';
-    div.innerHTML = item.label;
-    div.dataset.id = item.id;
-    div.onclick = () => selectFunc(div);
-    funcCol.appendChild(div);
-  });
+      function validateDrawing(id) {
+        const canvas = document.getElementById('tracingCanvas' + id);
+        const ctx = canvas.getContext('2d');
+        const imageData = ctx.getImageData(100, 100, 100, 100);
+        let drawn = false;
 
-  derivs.forEach(item => {
-    const div = document.createElement('div');
-    div.className = 'match-item';
-    div.innerHTML = item.label;
-    div.dataset.id = item.id;
-    div.onclick = () => selectDeriv(div);
-    derivCol.appendChild(div);
-  });
-}
+        for (let i = 0; i < imageData.data.length; i += 4) {
+          if (imageData.data[i + 3] > 20) {
+            drawn = true;
+            break;
+          }
+        }
 
-function selectFunc(itemDiv) {
-  if (itemDiv.classList.contains('correct')) return;
-  selectedFunc = itemDiv;
-  tryMatch();
-}
+        const feedbackEl = document.getElementById('feedback' + id);
+        feedbackEl.textContent = drawn ? '' : 'Try tracing more carefully!';
+      }
 
-function tryMatch() {
-  if (selectedFunc && selectedDeriv) {
-    checkMatchPair();
-  }
-}
+      // Initialize all canvases
+      canvasTypes.forEach(type => {
+        letters.forEach(letter => {
+          const id = `${type}_${letter}`;
+          setupCanvas(id);
+        });
+      });
 
-function checkMatchPair() {
-  const feedback = document.getElementById('match-feedback');
-  if (selectedFunc.dataset.id === selectedDeriv.dataset.id) {
-    selectedFunc.classList.add('correct');
-    selectedDeriv.classList.add('correct');
-    feedback.textContent = 'Correct!';
-    feedback.style.color = '#388e3c';
-    checkMatchCompletion();
-  } else {
-    selectedFunc.classList.add('wrong');
-    selectedDeriv.classList.add('wrong');
-    feedback.textContent = 'Try again!';
-    feedback.style.color = 'red';
-    setTimeout(() => {
-      selectedFunc.classList.remove('wrong');
-      selectedDeriv.classList.remove('wrong');
-      feedback.textContent = '';
-    }, 800);
-  }
-  selectedFunc = null;
-  selectedDeriv = null;
-}
+      const matchPairs = [
+        { id: 1, func: 'f(x)=x', deriv: '1' },
+        { id: 2, func: 'f(x)=x<sup>2</sup>', deriv: '2x' },
+        { id: 3, func: 'f(x)=x<sup>3</sup>', deriv: '3x<sup>2</sup>' },
+        { id: 4, func: 'f(x)=2x<sup>2</sup>', deriv: '4x' },
+        { id: 5, func: 'f(x)=8x<sup>2</sup>', deriv: '16x' },
+        { id: 6, func: 'f(x)=6x<sup>3</sup>', deriv: '18x<sup>2</sup>' },
+      ];
 
-function checkMatchCompletion() {
-  const funcCol = document.getElementById('function-column');
-  const derivCol = document.getElementById('derivative-column');
-  const remainingFuncs = [...funcCol.querySelectorAll('.match-item')].filter(item => !item.classList.contains('correct'));
-  const remainingDerivs = [...derivCol.querySelectorAll('.match-item')].filter(item => !item.classList.contains('correct'));
-  const feedback = document.getElementById('match-feedback');
-  if (remainingFuncs.length === 0 && remainingDerivs.length === 0) {
-    feedback.textContent = 'Well done!';
-    feedback.style.color = '#388e3c';
-  }
-}
+      function selectDeriv(itemDiv) {
+        if (itemDiv.classList.contains('correct')) return;
+        selectedDeriv = itemDiv;
+        tryMatch();
+      }
+      function shuffle(array) {
+        return array
+          .map(value => ({ value, sort: Math.random() }))
+          .sort((a, b) => a.sort - b.sort)
+          .map(({ value }) => value);
+      }
 
-renderColumns();
-    function playLetterAudio(letterId) {
+      let selectedFunc = null;
+      let selectedDeriv = null;
+
+      function renderColumns() {
+        const funcCol = document.getElementById('function-column');
+        const derivCol = document.getElementById('derivative-column');
+        funcCol.innerHTML = "";
+        derivCol.innerHTML = "";
+
+        const funcs = shuffle(matchPairs.map(p => ({ label: p.func, id: p.id })));
+        const derivs = shuffle(matchPairs.map(p => ({ label: p.deriv, id: p.id })));
+
+        funcs.forEach(item => {
+          const div = document.createElement('div');
+          div.className = 'match-item';
+          div.innerHTML = item.label;
+          div.dataset.id = item.id;
+          div.onclick = () => selectFunc(div);
+          funcCol.appendChild(div);
+        });
+
+        derivs.forEach(item => {
+          const div = document.createElement('div');
+          div.className = 'match-item';
+          div.innerHTML = item.label;
+          div.dataset.id = item.id;
+          div.onclick = () => selectDeriv(div);
+          derivCol.appendChild(div);
+        });
+      }
+
+      function selectFunc(itemDiv) {
+        if (itemDiv.classList.contains('correct')) return;
+        selectedFunc = itemDiv;
+        tryMatch();
+      }
+
+      function tryMatch() {
+        if (selectedFunc && selectedDeriv) {
+          checkMatchPair();
+        }
+      }
+
+      function checkMatchPair() {
+        const feedback = document.getElementById('match-feedback');
+        if (selectedFunc.dataset.id === selectedDeriv.dataset.id) {
+          selectedFunc.classList.add('correct');
+          selectedDeriv.classList.add('correct');
+          feedback.textContent = 'Correct!';
+          feedback.style.color = '#388e3c';
+          checkMatchCompletion();
+        } else {
+          selectedFunc.classList.add('wrong');
+          selectedDeriv.classList.add('wrong');
+          feedback.textContent = 'Try again!';
+          feedback.style.color = 'red';
+          setTimeout(() => {
+            selectedFunc.classList.remove('wrong');
+            selectedDeriv.classList.remove('wrong');
+            feedback.textContent = '';
+          }, 800);
+        }
+        selectedFunc = null;
+        selectedDeriv = null;
+      }
+
+      function checkMatchCompletion() {
+        const funcCol = document.getElementById('function-column');
+        const derivCol = document.getElementById('derivative-column');
+        const remainingFuncs = [...funcCol.querySelectorAll('.match-item')].filter(item => !item.classList.contains('correct'));
+        const remainingDerivs = [...derivCol.querySelectorAll('.match-item')].filter(item => !item.classList.contains('correct'));
+        const feedback = document.getElementById('match-feedback');
+        if (remainingFuncs.length === 0 && remainingDerivs.length === 0) {
+          feedback.textContent = 'Well done!';
+          feedback.style.color = '#388e3c';
+        }
+      }
+
+      renderColumns();
+      function playLetterAudio(letterId) {
         const audio = document.getElementById(`audio-${letterId}`);
         if (audio) {
-        audio.currentTime = 0; // rewind in case it's already playing
-        audio.play().catch(err => {
+          audio.currentTime = 0; // rewind in case it's already playing
+          audio.play().catch(err => {
             console.error("Audio failed to play:", err);
-        });
+          });
         } else {
-        console.error(`Audio element for '${letterId}' not found`);
+          console.error(`Audio element for '${letterId}' not found`);
         }
-    }
+      }
 
     </script>
+  </div>
 </body>
 </html>
