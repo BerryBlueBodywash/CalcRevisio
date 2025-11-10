@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CalcReviso — Test 1</title>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Nunito:wght@900&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background: #ffffff;
+      font-family: 'Patrick Hand', cursive;
+      margin: 0;
+      padding: 0;
+      overflow-y: auto; /* ✅ makes page scrollable */
+    }
+
+    .test-container {
+      background: #ffffff; 
+      padding: 30px;
+      margin: 30px auto;
+      border-radius: 20px;
+      max-width: 800px;
+      width: 90%;    }
+
+    h1 {
+      font-family: 'Nunito', sans-serif;
+      font-size: 2rem;
+      text-align: center;
+      color: #2e004f;
+      margin-bottom: 1.5rem;
+    }
+
+    .question {
+      background: #f5f5f5;
+      padding: 20px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .question p {
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: block;
+      margin: 6px 0;
+      cursor: pointer;
+    }
+
+    button {
+      display: block;
+      margin: 30px auto;
+      padding: 12px 35px;
+      background: #d5a9ff;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    button:hover {
+      background: #d5a9ff;
+    }
+
+    .result {
+      text-align: center;
+      font-family: 'Nunito', sans-serif;
+      font-size: 1.5rem;
+      color: #d5a9ff;
+      font-weight: 900;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="test-container">
+    <h1>Test 1</h1>
+    <form id="calcTest">
+
+      <div class="question">
+        <p>1. Using first principles, what is the derivative of \( f(x) = x^2 \)?</p>
+        <label><input type="radio" name="q1" value="a"> \( f'(x) = 2x \)</label>
+        <label><input type="radio" name="q1" value="b"> \( f'(x) = x^2 \)</label>
+        <label><input type="radio" name="q1" value="c"> \( f'(x) = 3x^2 \)</label>
+      </div>
+
+      <div class="question">
+        <p>2. Differentiate \( f(x) = 5x^3 - 2x^2 + 7 \).</p>
+        <label><input type="radio" name="q2" value="a"> \( 15x^2 - 4x \)</label>
+        <label><input type="radio" name="q2" value="b"> \( 10x^2 - 2x + 7 \)</label>
+        <label><input type="radio" name="q2" value="c"> \( 3x^2 - 4x \)</label>
+      </div>
+
+      <div class="question">
+        <p>3. Differentiate \( f(x) = \sin(x) \).</p>
+        <label><input type="radio" name="q3" value="a"> \( \cos(x) \)</label>
+        <label><input type="radio" name="q3" value="b"> \( -\cos(x) \)</label>
+        <label><input type="radio" name="q3" value="c"> \( \sin(x) \)</label>
+      </div>
+
+      <div class="question">
+        <p>4. Differentiate \( f(x) = e^{2x} \).</p>
+        <label><input type="radio" name="q4" value="a"> \( 2e^{2x} \)</label>
+        <label><input type="radio" name="q4" value="b"> \( e^{2x} \)</label>
+        <label><input type="radio" name="q4" value="c"> \( 2x e^{x} \)</label>
+      </div>
+
+      <div class="question">
+        <p>5. Find \( \frac{dy}{dx} \) if \( y = \ln(x^2 + 1) \).</p>
+        <label><input type="radio" name="q5" value="a"> \( \frac{2x}{x^2 + 1} \)</label>
+        <label><input type="radio" name="q5" value="b"> \( \frac{1}{x^2 + 1} \)</label>
+        <label><input type="radio" name="q5" value="c"> \( \frac{x}{x^2 + 1} \)</label>
+      </div>
+
+      <div class="question">
+        <p>6. Using the product rule, find \( \frac{d}{dx}(x^2 \sin x) \).</p>
+        <label><input type="radio" name="q6" value="a"> \( 2x\sin x + x^2 \cos x \)</label>
+        <label><input type="radio" name="q6" value="b"> \( 2x\cos x + x^2 \sin x \)</label>
+        <label><input type="radio" name="q6" value="c"> \( \sin x + \cos x \)</label>
+      </div>
+
+      <div class="question">
+        <p>7. Using the chain rule, find \( \frac{d}{dx}(\cos(3x)) \).</p>
+        <label><input type="radio" name="q7" value="a"> \( -3\sin(3x) \)</label>
+        <label><input type="radio" name="q7" value="b"> \( 3\sin(3x) \)</label>
+        <label><input type="radio" name="q7" value="c"> \( -\sin(3x) \)</label>
+      </div>
+
+      <div class="question">
+        <p>8. Find the gradient of \( y = x^3 - 6x^2 + 9x \) at \( x = 3 \).</p>
+        <label><input type="radio" name="q8" value="a"> 0</label>
+        <label><input type="radio" name="q8" value="b"> 9</label>
+        <label><input type="radio" name="q8" value="c"> 3</label>
+      </div>
+
+      <div class="question">
+        <p>9. If \( y = \frac{1}{x^2} \), find \( \frac{dy}{dx} \).</p>
+        <label><input type="radio" name="q9" value="a"> \( -\frac{2}{x^3} \)</label>
+        <label><input type="radio" name="q9" value="b"> \( \frac{2}{x^3} \)</label>
+        <label><input type="radio" name="q9" value="c"> \( -\frac{1}{x^2} \)</label>
+      </div>
+
+      <div class="question">
+        <p>10. Find \( \frac{dy}{dx} \) if \( y = \tan x \).</p>
+        <label><input type="radio" name="q10" value="a"> \( \sec^2 x \)</label>
+        <label><input type="radio" name="q10" value="b"> \( \cos^2 x \)</label>
+        <label><input type="radio" name="q10" value="c"> \( \sin x \)</label>
+      </div>
+
+      <button type="button" onclick="gradeTest()">Submit Test</button>
+    </form>
+
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    const answers = {
+      q1: 'a',
+      q2: 'a',
+      q3: 'a',
+      q4: 'a',
+      q5: 'a',
+      q6: 'a',
+      q7: 'a',
+      q8: 'a',
+      q9: 'a',
+      q10: 'a'
+    };
+
+    function gradeTest() {
+      let score = 0;
+      for (let key in answers) {
+        const selected = document.querySelector(`input[name="${key}"]:checked`);
+        if (selected && selected.value === answers[key]) score++;
+      }
+      const percent = Math.round((score / Object.keys(answers).length) * 100);
+      document.getElementById('result').innerHTML =
+        `You scored ${score}/10`;
+    }
+  </script>
+</body>
+</html>
