@@ -1,1 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Practice Set 1</title>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Nunito:wght@900&display=swap" rel="stylesheet">
 
+  <style>
+    body {
+      background: #ffffff;
+      font-family: 'Patrick Hand', cursive;
+      margin: 0;
+      padding: 0;
+      overflow-y: auto; /* ✅ makes page scrollable */
+    }
+
+    .test-container {
+      background: #ffffff; 
+      padding: 30px;
+      margin: 30px auto;
+      border-radius: 20px;
+      max-width: 800px;
+      width: 90%;    }
+
+    h1 {
+      font-family: 'Nunito', sans-serif;
+      font-size: 2rem;
+      text-align: center;
+      color: #2e004f;
+      margin-bottom: 1.5rem;
+    }
+
+    .question {
+      background: #f5f5f5;
+      padding: 20px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .question p {
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: block;
+      margin: 6px 0;
+      cursor: pointer;
+    }
+
+    button {
+      display: block;
+      margin: 30px auto;
+      padding: 12px 35px;
+      background: #d5a9ff;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    button:hover {
+      background: #d5a9ff;
+    }
+
+    .result {
+      text-align: center;
+      font-family: 'Nunito', sans-serif;
+      font-size: 1.5rem;
+      color: #d5a9ff;
+      font-weight: 900;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="test-container">
+    <h1>Practice Set 1</h1>
+    <form id="calcTest">
+
+      <div class="question">
+        <p>6. Find \( \frac{dy}{dx} \) if \( x^2 + y^2 = 25 \).</p>
+        <label><input type="radio" name="q6" value="a"> \( \frac{dy}{dx} = -\frac{x}{y} \)</label>
+        <label><input type="radio" name="q6" value="b"> \( \frac{dy}{dx} = \frac{y}{x} \)</label>
+        <label><input type="radio" name="q6" value="c"> \( \frac{dy}{dx} = -\frac{y}{x} \)</label>
+      </div>
+
+      <div class="question">
+        <p>7. Find the coordinates of the stationary points of \( y = x^3 - 3x \).</p>
+        <label><input type="radio" name="q7" value="a"> (1, -2) and (-1, 2)</label>
+        <label><input type="radio" name="q7" value="b"> (1, 2) and (-1, -2)</label>
+        <label><input type="radio" name="q7" value="c"> (0, 0) only</label>
+      </div>
+
+      <div class="question">
+        <p>8. Find the value of \( k \) such that \( f(x) = kx^2 \) has a gradient of 8 at \( x = 2 \).</p>
+        <label><input type="radio" name="q8" value="a"> 2</label>
+        <label><input type="radio" name="q8" value="b"> 4</label>
+        <label><input type="radio" name="q8" value="c"> 1</label>
+      </div>
+
+      <div class="question">
+        <p>9. Evaluate \( \displaystyle \int (6x^2 + 4x) \, dx \).</p>
+        <label><input type="radio" name="q9" value="a"> \( 2x^3 + 2x^2 + C \)</label>
+        <label><input type="radio" name="q9" value="b"> \( 2x^3 + x^2 + C \)</label>
+        <label><input type="radio" name="q9" value="c"> \( 3x^3 + 2x^2 + C \)</label>
+      </div>
+
+      <div class="question">
+        <p>10. The area under \( y = 4x \) from \( x=0 \) to \( x=2 \) is:</p>
+        <label><input type="radio" name="q10" value="a"> 8</label>
+        <label><input type="radio" name="q10" value="b"> 4</label>
+        <label><input type="radio" name="q10" value="c"> 16</label>
+      </div>
+
+      <button type="button" onclick="gradeTest()">Submit Set</button>
+    </form>
+
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    const answers = {
+      q1: 'a',
+      q2: 'a',
+      q3: 'a',
+      q4: 'a',
+      q5: 'a',
+      q6: 'a',
+      q7: 'a',
+      q8: 'a',
+      q9: 'a',
+      q10: 'a'
+    };
+
+    function gradeTest() {
+      let score = 0;
+      for (let key in answers) {
+        const selected = document.querySelector(`input[name="${key}"]:checked`);
+        if (selected && selected.value === answers[key]) score++;
+      }
+      const percent = Math.round((score / Object.keys(answers).length) * 100);
+      document.getElementById('result').innerHTML =
+        `You scored ${score}/10`;
+    }
+  </script>
+</body>
+</html>
